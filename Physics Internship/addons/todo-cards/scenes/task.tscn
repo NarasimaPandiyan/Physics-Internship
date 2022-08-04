@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="Task" type="HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_right = 24.0
+margin_bottom = 24.0
+focus_mode = 1
+enabled_focus_mode = 1
+flat = true
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_right = 224.0
+margin_bottom = 24.0
+focus_mode = 1
+size_flags_horizontal = 3
+text = "New Task"
+max_length = 25
+virtual_keyboard_enabled = false
+
+[node name="XButton" type="Button" parent="."]
+margin_left = 228.0
+margin_right = 240.0
+margin_bottom = 24.0
