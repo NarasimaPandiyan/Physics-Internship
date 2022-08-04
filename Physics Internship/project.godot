@@ -221,7 +221,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg", "res://addons/github-integration/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/github-integration/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/todo-cards/plugin.cfg" )
 
 [gdnative]
 
