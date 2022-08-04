@@ -1,0 +1,402 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=1]
+[ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=2]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" type="Script" id=3]
+[ext_resource path="res://addons/rmsmartshape/shapes/point_array.gd" type="Script" id=4]
+[ext_resource path="res://addons/rmsmartshape/vertex_properties.gd" type="Script" id=5]
+[ext_resource path="res://addons/rmsmartshape/normal_range.gd" type="Script" id=6]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material.gd" type="Script" id=7]
+[ext_resource path="res://addons/rmsmartshape/shapes/shape_closed.gd" type="Script" id=8]
+[ext_resource path="res://Images/Terrain/DirtBG.png" type="Texture" id=9]
+[ext_resource path="res://Images/Terrain/Grass.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Props/Car/Car.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Experiment 1.gd" type="Script" id=12]
+[ext_resource path="res://Images/Other/Pie_Fill.png" type="Texture" id=13]
+[ext_resource path="res://Images/Other/Pie_Bg.png" type="Texture" id=14]
+[ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=15]
+
+[sub_resource type="Resource" id=56]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=57]
+script = ExtResource( 1 )
+position = Vector2( 6.3783, -16.0571 )
+point_in = Vector2( -88.8092, 4.80051 )
+point_out = Vector2( 74.4077, 12.0012 )
+properties = SubResource( 56 )
+
+[sub_resource type="Resource" id=58]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=59]
+script = ExtResource( 1 )
+position = Vector2( 1373.8, 685.684 )
+point_in = Vector2( -60.0061, 2.40024 )
+point_out = Vector2( 60.0061, -2.40024 )
+properties = SubResource( 58 )
+
+[sub_resource type="Resource" id=60]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=61]
+script = ExtResource( 1 )
+position = Vector2( 1343.32, 754.423 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 60 )
+
+[sub_resource type="Resource" id=62]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=63]
+script = ExtResource( 1 )
+position = Vector2( 6.3783, -16.0571 )
+point_in = Vector2( -88.8092, 4.80051 )
+point_out = Vector2( 74.4077, 12.0012 )
+properties = SubResource( 62 )
+
+[sub_resource type="Resource" id=64]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=65]
+script = ExtResource( 1 )
+position = Vector2( -51.2276, 752.022 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 64 )
+
+[sub_resource type="Resource" id=66]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=67]
+script = ExtResource( 1 )
+position = Vector2( 644.644, 747.022 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 66 )
+
+[sub_resource type="Resource" id=68]
+script = ExtResource( 4 )
+_points = {
+0: SubResource( 57 ),
+1: SubResource( 59 ),
+2: SubResource( 61 ),
+3: SubResource( 63 ),
+4: SubResource( 65 ),
+6: SubResource( 67 )
+}
+_point_order = [ 0, 1, 2, 6, 4, 3 ]
+_constraints = {
+[ 0, 3 ]: 15
+}
+_next_key = 7
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 7 )
+textures = [ ExtResource( 10 ) ]
+texture_normals = [  ]
+textures_corner_outer = [  ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [  ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [  ]
+textures_taper_right = [  ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 6 )
+begin = 0.0
+distance = 0.0
+edgeRendering = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 3 )
+edge_material = SubResource( 16 )
+normal_range = SubResource( 17 )
+weld = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 2 )
+_edge_meta_materials = [ SubResource( 18 ) ]
+fill_textures = [ ExtResource( 9 ) ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="Theme" id=35]
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0, 0.538886, 0.631373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.862745, 0.101961, 0.203922, 1 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.631373, 0, 0.337255, 1 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 10, 201 )
+
+[node name="Experiment 1" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -47, 45 )
+
+[node name="SS2D_Shape_Closed2" type="Node2D" parent="StaticBody2D"]
+script = ExtResource( 8 )
+_points = SubResource( 68 )
+material_overrides = {
+}
+shape_material = SubResource( 19 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+modulate = Color( 1, 1, 1, 0.3 )
+polygon = PoolVector2Array( 6.38763, -16.4204, 10.7101, -15.0162, 16.6799, -12.9885, 33.3452, -6.18809, 1300.87, 656.706, 1349.37, 678.321, 1364.81, 683.899, 1391.83, 703.895, 1386.33, 712.656, 1381.08, 719.171, 1356.53, 743.354, 1343.66, 755.359, 644.644, 747.023, -54.4916, 755.348, -55.7382, 369.782, -40.1108, 105.978, -31.9353, 56.6036, -21.6301, 18.3125, -15.5813, 4.0274, -12.328, -1.78017, -2.24733, -12.793 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 39.9999, 20.0105 )
+rotation = 0.977384
+scale = Vector2( 1, 1 )
+
+[node name="Car" parent="." instance=ExtResource( 11 )]
+position = Vector2( 39, 20 )
+rotation = 0.488692
+
+[node name="info" type="VBoxContainer" parent="."]
+margin_left = 604.0
+margin_top = 4.0
+margin_right = 681.0
+margin_bottom = 78.0
+
+[node name="FPS" type="Label" parent="info"]
+margin_right = 77.0
+margin_bottom = 14.0
+text = "FPS:"
+
+[node name="Height" type="Label" parent="info"]
+margin_top = 18.0
+margin_right = 77.0
+margin_bottom = 32.0
+text = "h:"
+
+[node name="Velocity" type="Label" parent="info"]
+margin_top = 36.0
+margin_right = 77.0
+margin_bottom = 50.0
+text = "v:"
+
+[node name="COE_info" type="Control" parent="."]
+margin_left = 13.0
+margin_top = -43.0
+margin_right = 53.0
+margin_bottom = -3.0
+
+[node name="PieChart" type="Control" parent="COE_info"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Pie" type="TextureProgress" parent="COE_info/PieChart"]
+margin_left = 180.0
+margin_top = 620.0
+margin_right = 244.0
+margin_bottom = 684.0
+texture_under = ExtResource( 14 )
+texture_progress = ExtResource( 13 )
+fill_mode = 4
+
+[node name="Label" type="Label" parent="COE_info/PieChart"]
+margin_left = 186.0
+margin_top = 685.0
+margin_right = 205.0
+margin_bottom = 716.0
+custom_colors/font_color = Color( 0, 0.537255, 0.631373, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "KE
+"
+
+[node name="Label2" type="Label" parent="COE_info/PieChart"]
+margin_left = 218.0
+margin_top = 686.0
+margin_right = 237.0
+margin_bottom = 717.0
+custom_colors/font_color = Color( 0.862745, 0.101961, 0.203922, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "PE
+"
+
+[node name="VerticalBars" type="Control" parent="COE_info"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ke" type="ProgressBar" parent="COE_info/VerticalBars"]
+margin_left = 39.0
+margin_top = 704.0
+margin_right = 189.0
+margin_bottom = 729.0
+rect_min_size = Vector2( 150, 25 )
+rect_rotation = -90.0
+theme = SubResource( 35 )
+custom_styles/bg = SubResource( 37 )
+
+[node name="pe" type="ProgressBar" parent="COE_info/VerticalBars"]
+margin_left = 72.0
+margin_top = 704.0
+margin_right = 222.0
+margin_bottom = 729.0
+rect_min_size = Vector2( 150, 25 )
+rect_rotation = -90.0
+theme = SubResource( 35 )
+custom_styles/bg = SubResource( 38 )
+
+[node name="te" type="ProgressBar" parent="COE_info/VerticalBars"]
+margin_left = 104.0
+margin_top = 704.0
+margin_right = 254.0
+margin_bottom = 729.0
+rect_min_size = Vector2( 150, 25 )
+rect_rotation = -90.0
+theme = SubResource( 35 )
+custom_styles/bg = SubResource( 39 )
+
+[node name="ke_l" type="Label" parent="COE_info/VerticalBars"]
+margin_left = 43.0
+margin_top = 707.0
+margin_right = 62.0
+margin_bottom = 721.0
+text = "KE"
+
+[node name="pe_l" type="Label" parent="COE_info/VerticalBars"]
+margin_left = 77.0
+margin_top = 707.0
+margin_right = 96.0
+margin_bottom = 721.0
+text = "PE"
+
+[node name="te_l" type="Label" parent="COE_info/VerticalBars"]
+margin_left = 108.0
+margin_top = 707.0
+margin_right = 127.0
+margin_bottom = 721.0
+text = "TE"
+
+[node name="Graph_Window" type="WindowDialog" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1200.0
+margin_bottom = 640.0
+
+[node name="Graph2D" type="Control" parent="Graph_Window"]
+margin_left = 40.0
+margin_top = 47.0
+margin_right = 1120.0
+margin_bottom = 567.0
+script = ExtResource( 15 )
+background_color = Color( 0, 0, 0, 1 )
+x_axis_min_value = 0.0
+x_axis_max_value = 10.0
+x_axis_grad_number = 11
+x_axis_label = ""
+y_axis_min_value = 0.0
+y_axis_max_value = 1.0
+y_axis_grad_number = 7
+y_axis_label = ""
+grid_horizontal_visible = false
+grid_vertical_visible = false
+
+[node name="UI" type="Panel" parent="."]
+margin_left = 1082.0
+margin_top = 22.0
+margin_right = 1262.0
+margin_bottom = 217.0
+
+[node name="b_toggle" type="CheckButton" parent="UI"]
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 176.0
+margin_bottom = 53.0
+pressed = true
+text = "Vertical Bars"
+
+[node name="p_toggle" type="CheckButton" parent="UI"]
+margin_left = 17.0
+margin_top = 52.0
+margin_right = 177.0
+margin_bottom = 92.0
+text = "Pie Chart"
+
+[node name="Reset_button" type="Button" parent="UI"]
+margin_left = 46.0
+margin_top = 116.0
+margin_right = 139.0
+margin_bottom = 138.0
+text = "Reset"
+
+[node name="graph_button" type="Button" parent="UI"]
+margin_left = 46.0
+margin_top = 145.0
+margin_right = 139.0
+margin_bottom = 167.0
+text = "Graph"
+
+[node name="Loop" type="CheckBox" parent="UI"]
+margin_left = 19.0
+margin_top = 86.0
+margin_right = 78.0
+margin_bottom = 110.0
+pressed = true
+text = "Loop"
+expand_icon = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1409, 713 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -59, -147 )
+shape = SubResource( 55 )
+
+[connection signal="toggled" from="UI/b_toggle" to="." method="_on_b_toggle_toggled"]
+[connection signal="pressed" from="UI/p_toggle" to="." method="_on_p_toggle_pressed"]
+[connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]
+[connection signal="pressed" from="UI/Reset_button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/graph_button" to="." method="_on_graph_button_pressed"]
+[connection signal="toggled" from="UI/Loop" to="." method="_on_Loop_toggled"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
