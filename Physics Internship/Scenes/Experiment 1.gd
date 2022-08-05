@@ -14,7 +14,8 @@ var ke_vs_v_id
 var pe_vs_h_id
 const start_points = Vector2(68,8)
 var loop = true
-
+var h_data = []
+var v_data = []
 
 func _ready():
 	wheels = get_tree().get_nodes_in_group("Wheel")
@@ -39,6 +40,9 @@ func _physics_process(delta):
 	ke = round(ke)
 	pe = round(pe)
 	te = round(te)
+	
+	h_data.append(round(h))
+	v_data.append(round(v))
 	
 	#updating info
 	$info/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
@@ -65,13 +69,13 @@ func _physics_process(delta):
 	if $Car.position < Vector2(1280,720):
 		$Graph_Window/KE_vs_v.x_axis_label = "v"
 		$Graph_Window/KE_vs_v.y_axis_label = "KE"
-		$Graph_Window/KE_vs_v.y_axis_max_value = te
-		$Graph_Window/KE_vs_v.x_axis_max_value = 20.0
+		$Graph_Window/KE_vs_v.y_axis_max_value = te*m
+		$Graph_Window/KE_vs_v.x_axis_max_value = 20.0*m
 		$Graph_Window/KE_vs_v.add_point(ke_vs_v_id,Vector2(v,ke))
 		
 		$Graph_Window/PE_vs_h.x_axis_label = "h"
 		$Graph_Window/PE_vs_h.y_axis_label = "PE"
-		$Graph_Window/PE_vs_h.y_axis_max_value = 150
+		$Graph_Window/PE_vs_h.y_axis_max_value = 150*m
 		$Graph_Window/PE_vs_h.x_axis_max_value = 20.0
 		$Graph_Window/PE_vs_h.add_point(pe_vs_h_id,Vector2(h,pe))
 		
@@ -94,11 +98,14 @@ func _on_b_toggle_toggled(button_pressed):
 
 
 func _on_Button_pressed():
-	reload()
+	$Car.hide()
+	$info/Height.hide()
+	$info/Velocity.hide()
 
 
 func _on_graph_button_pressed():
 	$Graph_Window.popup()
+	
 
 func _on_Area2D_body_entered(body):
 	if loop:
@@ -123,10 +130,19 @@ func reload():
 		wheel.angular_velocity = 0
 		wheel.linear_velocity = Vector2(0,0)
 		wheel.applied_torque = 0
-		wheel.applied_force = Vector2(-50,50)
+		wheel.applied_force = Vector2(0,0)
 
 
 
 func _on_Reset_button_pressed():
 	get_tree().reload_current_scene()
 	reload()
+
+
+func _on_Graph_Window_popup_hide():
+	pass # Replace with function body.
+
+
+func _on_Mass_Slider_value_changed(value):
+	$Car.mass = value
+	
