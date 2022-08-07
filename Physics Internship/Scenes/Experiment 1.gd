@@ -126,6 +126,10 @@ func reload():
 	$Car.show()
 	$Car.position = $SpawnPoint.position
 	$Car.rotation_degrees = $SpawnPoint.rotation_degrees
+	$Car.applied_force = Vector2.ZERO
+	$Car.applied_torque = 0
+	$Car.angular_velocity = 0
+	$Car.linear_velocity = Vector2.ZERO
 	for wheel in wheels:
 		wheel.angular_velocity = 0
 		wheel.linear_velocity = Vector2(0,0)
@@ -149,4 +153,8 @@ func _on_Mass_Slider_value_changed(value):
 
 
 func _on_CP1_body_entered(body):
-	pass # Replace with function bodysada.
+	print(h)
+
+
+func _on_Start_button_pressed():
+	pass
