@@ -146,3 +146,7 @@ func _on_Graph_Window_popup_hide():
 func _on_Mass_Slider_value_changed(value):
 	$Car.mass = value
 	
+
+
+func _on_CP1_body_entered(body):
+	pass # Replace with function bodysada.
