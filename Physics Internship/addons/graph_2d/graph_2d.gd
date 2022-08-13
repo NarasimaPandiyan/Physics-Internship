@@ -461,3 +461,7 @@ func _on_Graph_resized() -> void:
 
 func _on_Plot_area_resized() -> void:
 	_update_plot()
+
+
+func _on_b_toggle_toggled(button_pressed):
+	pass # Replace with function body.

@@ -16,13 +16,12 @@ const start_points = Vector2(68,8)
 var loop = true
 var h_data = []
 var v_data = []
-
+var started = false
 func _ready():
 	wheels = get_tree().get_nodes_in_group("Wheel")
-	ke_vs_v_id = $Graph_Window/KE_vs_v.add_curve("KE vs V",Color.dodgerblue)
-	pe_vs_h_id = $Graph_Window/PE_vs_h.add_curve("PE vs H",Color.crimson)
+	ke_vs_v_id = $Exp1_UI/Graph_Window/KE_vs_v.add_curve("KE vs V",Color.dodgerblue)
+	pe_vs_h_id = $"Exp1_UI/Graph_Window/PE_vs_h".add_curve("PE vs H",Color.crimson)
 	
-
 func _physics_process(delta):
 	#Calculating parameters
 	pos = $Car.position
@@ -45,39 +44,39 @@ func _physics_process(delta):
 	v_data.append(round(v))
 	
 	#updating info
-	$info/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
-	$info/Height.text ="h: "+ str(round(h))
-	$info/Velocity.text = "v: "+str(round(v))
+	$Exp1_UI/info/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
+	$Exp1_UI/info/Height.text ="h: "+ str(round(h))
+	$Exp1_UI/info/Velocity.text = "v: "+str(round(v))
 	
 	#updating the ke bar
-	$COE_info/VerticalBars/ke.max_value = te
-	$COE_info/VerticalBars/ke.value = ke
+	$Exp1_UI/COE_info/VerticalBars/ke.max_value = te
+	$Exp1_UI/COE_info/VerticalBars/ke.value = ke
 	
 	#updating the pe bar
-	$COE_info/VerticalBars/pe.max_value = te
-	$COE_info/VerticalBars/pe.value = pe
+	$Exp1_UI/COE_info/VerticalBars/pe.max_value = te
+	$Exp1_UI/COE_info/VerticalBars/pe.value = pe
 	
 	#updating the te bar
-	$COE_info/VerticalBars/te.max_value = te
-	$COE_info/VerticalBars/te.value = te
+	$Exp1_UI/COE_info/VerticalBars/te.max_value = te
+	$Exp1_UI/COE_info/VerticalBars/te.value = te
 	
 	#updating the pie
-	$COE_info/PieChart/Pie.max_value = te
-	$COE_info/PieChart/Pie.value = ke
+	$Exp1_UI/COE_info/PieChart/Pie.max_value = te
+	$Exp1_UI/COE_info/PieChart/Pie.value = ke
 	
 	#plotting graph
 	if $Car.position < Vector2(1280,720):
-		$Graph_Window/KE_vs_v.x_axis_label = "v"
-		$Graph_Window/KE_vs_v.y_axis_label = "KE"
-		$Graph_Window/KE_vs_v.y_axis_max_value = te*m
-		$Graph_Window/KE_vs_v.x_axis_max_value = 20.0*m
-		$Graph_Window/KE_vs_v.add_point(ke_vs_v_id,Vector2(v,ke))
+		$Exp1_UI/Graph_Window/KE_vs_v.x_axis_label = "v"
+		$Exp1_UI/Graph_Window/KE_vs_v.y_axis_label = "KE"
+		$Exp1_UI/Graph_Window/KE_vs_v.y_axis_max_value = te*m
+		$Exp1_UI/Graph_Window/KE_vs_v.x_axis_max_value = 20.0*m
+		$Exp1_UI/Graph_Window/KE_vs_v.add_point(ke_vs_v_id,Vector2(v,ke))
 		
-		$Graph_Window/PE_vs_h.x_axis_label = "h"
-		$Graph_Window/PE_vs_h.y_axis_label = "PE"
-		$Graph_Window/PE_vs_h.y_axis_max_value = 150*m
-		$Graph_Window/PE_vs_h.x_axis_max_value = 20.0
-		$Graph_Window/PE_vs_h.add_point(pe_vs_h_id,Vector2(h,pe))
+		$Exp1_UI/Graph_Window/PE_vs_h.x_axis_label = "h"
+		$Exp1_UI/Graph_Window/PE_vs_h.y_axis_label = "PE"
+		$Exp1_UI/Graph_Window/PE_vs_h.y_axis_max_value = 150*m
+		$Exp1_UI/Graph_Window/PE_vs_h.x_axis_max_value = 20.0
+		$Exp1_UI/Graph_Window/PE_vs_h.add_point(pe_vs_h_id,Vector2(h,pe))
 		
 	else:
 		#$Graph_Window/Graph2D.clear_curve(ke_vs_v_id)
@@ -90,33 +89,31 @@ func get_distance(point1,point2):
 	
 
 func _on_p_toggle_toggled(button_pressed):
-	$COE_info/PieChart.visible = button_pressed
+	$Exp1_UI/COE_info/PieChart.visible = button_pressed
 
 
 func _on_b_toggle_toggled(button_pressed):
-	$COE_info/VerticalBars.visible = button_pressed
+	$Exp1_UI/COE_info/VerticalBars.visible = button_pressed
 
 
 func _on_Button_pressed():
-	$Car.hide()
-	$info/Height.hide()
-	$info/Velocity.hide()
+	pass
 
 
 func _on_graph_button_pressed():
-	$Graph_Window.popup()
+	$Exp1_UI/Graph_Window.popup()
 	
 
 func _on_Area2D_body_entered(body):
 	if loop:
-		$Graph_Window/KE_vs_v.clear_curve(ke_vs_v_id)
-		$Graph_Window/PE_vs_h.clear_curve(ke_vs_v_id)
+		$Exp1_UI/Graph_Window/KE_vs_v.clear_curve(ke_vs_v_id)
+		$Exp1_UI/Graph_Window/PE_vs_h.clear_curve(ke_vs_v_id)
 		
 		reload()
 	else:
 		$Car.hide()
-		$info/Height.hide()
-		$info/Velocity.hide()
+		$Exp1_UI/info/Height.hide()
+		$Exp1_UI/info/Velocity.hide()
 
 
 func _on_Loop_toggled(button_pressed):
@@ -156,5 +153,12 @@ func _on_CP1_body_entered(body):
 	print(h)
 
 
-func _on_Start_button_pressed():
-	pass
+func stopper(visible:bool):
+	print("hey")
+	if !visible:
+		$CarStopper.collision_layer = 3
+		$CarStopper.collision_mask = 3
+	else:
+		$CarStopper.collision_layer = 1
+		$CarStopper.collision_mask = 1
+	

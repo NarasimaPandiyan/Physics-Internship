@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=2]
@@ -12,22 +12,32 @@
 [ext_resource path="res://Images/Terrain/Grass.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Props/Car/Car.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Experiment 1.gd" type="Script" id=12]
-[ext_resource path="res://Images/Other/Pie_Fill.png" type="Texture" id=13]
-[ext_resource path="res://Images/Other/Pie_Bg.png" type="Texture" id=14]
-[ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=15]
-[ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Exp1 UI.tscn" type="PackedScene" id=13]
 
-[sub_resource type="Resource" id=136]
+[sub_resource type="Resource" id=134]
 script = ExtResource( 5 )
 texture_idx = 6
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=137]
+[sub_resource type="Resource" id=135]
 script = ExtResource( 1 )
 position = Vector2( 6.92531, 83.2444 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
+properties = SubResource( 134 )
+
+[sub_resource type="Resource" id=136]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=137]
+script = ExtResource( 1 )
+position = Vector2( 1469.24, 737.075 )
+point_in = Vector2( -60.0061, 2.40024 )
+point_out = Vector2( 60.0061, -2.40024 )
 properties = SubResource( 136 )
 
 [sub_resource type="Resource" id=138]
@@ -38,34 +48,34 @@ width = 1.0
 
 [sub_resource type="Resource" id=139]
 script = ExtResource( 1 )
-position = Vector2( 1469.24, 737.075 )
-point_in = Vector2( -60.0061, 2.40024 )
-point_out = Vector2( 60.0061, -2.40024 )
-properties = SubResource( 138 )
-
-[sub_resource type="Resource" id=140]
-script = ExtResource( 5 )
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id=141]
-script = ExtResource( 1 )
 position = Vector2( 1343.32, 754.423 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 140 )
+properties = SubResource( 138 )
 
-[sub_resource type="Resource" id=142]
+[sub_resource type="Resource" id=140]
 script = ExtResource( 5 )
 texture_idx = 6
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=143]
+[sub_resource type="Resource" id=141]
 script = ExtResource( 1 )
 position = Vector2( 6.92531, 83.2444 )
 point_in = Vector2( -88.8092, 4.80051 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 140 )
+
+[sub_resource type="Resource" id=142]
+script = ExtResource( 5 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=143]
+script = ExtResource( 1 )
+position = Vector2( -51.2276, 752.022 )
+point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 142 )
 
@@ -77,7 +87,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=145]
 script = ExtResource( 1 )
-position = Vector2( -51.2276, 752.022 )
+position = Vector2( 644.644, 747.022 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 144 )
@@ -90,34 +100,21 @@ width = 1.0
 
 [sub_resource type="Resource" id=147]
 script = ExtResource( 1 )
-position = Vector2( 644.644, 747.022 )
-point_in = Vector2( 0, 0 )
-point_out = Vector2( 0, 0 )
-properties = SubResource( 146 )
-
-[sub_resource type="Resource" id=148]
-script = ExtResource( 5 )
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id=149]
-script = ExtResource( 1 )
 position = Vector2( 191.402, 83.7656 )
 point_in = Vector2( -75.9819, 2.35971 )
 point_out = Vector2( 75.9819, -2.35971 )
-properties = SubResource( 148 )
+properties = SubResource( 146 )
 
-[sub_resource type="Resource" id=150]
+[sub_resource type="Resource" id=148]
 script = ExtResource( 4 )
 _points = {
-0: SubResource( 137 ),
-1: SubResource( 139 ),
-2: SubResource( 141 ),
-3: SubResource( 143 ),
-4: SubResource( 145 ),
-6: SubResource( 147 ),
-7: SubResource( 149 )
+0: SubResource( 135 ),
+1: SubResource( 137 ),
+2: SubResource( 139 ),
+3: SubResource( 141 ),
+4: SubResource( 143 ),
+6: SubResource( 145 ),
+7: SubResource( 147 )
 }
 _point_order = [ 0, 7, 1, 2, 6, 4, 3 ]
 _constraints = {
@@ -166,98 +163,22 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Theme" id=35]
-
-[sub_resource type="StyleBoxFlat" id=37]
-bg_color = Color( 0, 0.538886, 0.631373, 1 )
-
-[sub_resource type="StyleBoxFlat" id=38]
-bg_color = Color( 0.862745, 0.101961, 0.203922, 1 )
-
-[sub_resource type="StyleBoxFlat" id=39]
-bg_color = Color( 0.631373, 0, 0.337255, 1 )
-
-[sub_resource type="Image" id=151]
-data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 160, 160, 160, 3, 222, 222, 222, 63, 223, 223, 223, 114, 223, 223, 223, 89, 217, 217, 217, 28, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 111, 111, 38, 223, 223, 223, 200, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 246, 222, 222, 222, 118, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 163, 163, 163, 9, 223, 223, 223, 215, 223, 223, 223, 229, 217, 217, 217, 85, 167, 167, 167, 12, 220, 220, 220, 39, 219, 219, 219, 160, 223, 223, 223, 254, 220, 220, 220, 96, 54, 54, 54, 0, 0, 0, 0, 0, 43, 43, 43, 0, 203, 203, 203, 109, 223, 223, 223, 252, 219, 219, 219, 56, 52, 52, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 162, 162, 162, 0, 221, 221, 221, 181, 223, 223, 223, 234, 134, 134, 134, 1, 56, 56, 56, 0, 166, 166, 166, 0, 222, 222, 222, 162, 223, 223, 223, 214, 166, 166, 166, 0, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 221, 221, 221, 87, 223, 223, 223, 254, 221, 221, 221, 35, 167, 167, 167, 8, 223, 223, 223, 207, 223, 223, 223, 254, 223, 223, 223, 254, 223, 223, 223, 214, 165, 165, 165, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 222, 222, 222, 87, 223, 223, 223, 254, 222, 222, 222, 37, 0, 0, 0, 0, 214, 214, 214, 37, 223, 223, 223, 241, 223, 223, 223, 244, 215, 215, 215, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 164, 164, 164, 0, 223, 223, 223, 180, 223, 223, 223, 235, 155, 155, 155, 1, 0, 0, 0, 0, 53, 53, 53, 0, 223, 223, 223, 88, 222, 222, 222, 98, 54, 54, 54, 0, 0, 0, 0, 0, 56, 56, 56, 0, 221, 221, 221, 39, 219, 219, 219, 160, 223, 223, 223, 254, 221, 221, 221, 98, 55, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 56, 56, 0, 56, 56, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 222, 222, 222, 62, 223, 223, 223, 254, 223, 223, 223, 247, 222, 222, 222, 118, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 167, 167, 167, 31, 223, 223, 223, 89, 217, 217, 217, 28, 54, 54, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
-"format": "RGBA8",
-"height": 12,
-"mipmaps": false,
-"width": 12
-}
-
-[sub_resource type="ImageTexture" id=70]
-image = SubResource( 151 )
-size = Vector2( 12, 12 )
-
-[sub_resource type="Image" id=152]
-data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 0, 222, 222, 222, 0, 221, 221, 221, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 0, 223, 223, 223, 180, 222, 222, 222, 207, 221, 221, 221, 53, 221, 221, 221, 0, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 223, 223, 223, 252, 222, 222, 222, 134, 218, 218, 218, 7, 219, 219, 219, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 222, 222, 222, 214, 220, 220, 220, 52, 221, 221, 221, 0, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 223, 223, 223, 252, 222, 222, 222, 134, 218, 218, 218, 7, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 222, 222, 222, 181, 222, 222, 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 223, 223, 223, 180, 223, 223, 223, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 223, 223, 223, 252, 222, 222, 222, 134, 218, 218, 218, 7, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 224, 224, 224, 255, 222, 222, 222, 214, 220, 220, 220, 52, 221, 221, 221, 0, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 224, 0, 224, 224, 224, 255, 224, 224, 224, 255, 223, 223, 223, 252, 222, 222, 222, 134, 218, 218, 218, 7, 219, 219, 219, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 0, 223, 223, 223, 152, 222, 222, 222, 191, 220, 220, 220, 52, 221, 221, 221, 0, 218, 218, 218, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 223, 223, 0, 222, 222, 222, 0, 220, 220, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="ImageTexture" id=135]
-flags = 0
-flags = 0
-image = SubResource( 152 )
-size = Vector2( 16, 16 )
-
-[sub_resource type="Image" id=153]
-data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 41, 58, 0, 163, 172, 236, 47, 162, 181, 238, 46, 40, 45, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 81, 91, 121, 0, 164, 183, 243, 217, 165, 183, 243, 233, 121, 134, 179, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 162, 180, 242, 39, 165, 183, 243, 255, 165, 183, 243, 255, 164, 182, 242, 116, 41, 46, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 43, 60, 0, 160, 178, 241, 114, 165, 183, 243, 254, 164, 182, 242, 202, 164, 183, 243, 233, 121, 135, 181, 11, 122, 135, 181, 19, 163, 182, 242, 73, 122, 130, 173, 6, 0, 0, 0, 0, 82, 91, 121, 0, 41, 45, 60, 0, 72, 89, 112, 0, 164, 182, 242, 191, 164, 182, 242, 206, 162, 182, 240, 55, 165, 183, 243, 255, 161, 179, 241, 167, 165, 183, 243, 232, 165, 183, 243, 245, 116, 134, 181, 5, 120, 132, 180, 4, 164, 183, 243, 196, 156, 177, 235, 64, 121, 175, 204, 16, 165, 183, 243, 251, 164, 182, 241, 131, 122, 136, 179, 0, 164, 182, 241, 183, 165, 183, 243, 255, 165, 182, 242, 204, 158, 176, 240, 44, 38, 43, 60, 0, 122, 131, 175, 6, 164, 182, 242, 212, 165, 183, 243, 230, 163, 182, 241, 109, 165, 183, 243, 255, 163, 182, 241, 54, 0, 0, 0, 0, 121, 136, 181, 16, 164, 182, 241, 71, 116, 129, 179, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 158, 180, 235, 42, 165, 183, 243, 245, 165, 183, 243, 253, 165, 183, 242, 232, 111, 137, 166, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 45, 59, 0, 163, 182, 242, 96, 165, 183, 243, 255, 162, 181, 240, 158, 80, 90, 119, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 45, 60, 0, 164, 181, 241, 81, 122, 135, 180, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
-"format": "RGBA8",
-"height": 12,
-"mipmaps": false,
-"width": 12
-}
-
-[sub_resource type="ImageTexture" id=73]
-image = SubResource( 153 )
-size = Vector2( 12, 12 )
-
 [sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 10, 201 )
 
-[sub_resource type="Image" id=154]
-data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 13, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 191, 191, 191, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 13, 255, 255, 255, 190, 255, 255, 255, 127, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 127, 255, 255, 255, 190, 191, 191, 191, 13, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 127, 255, 255, 255, 229, 255, 255, 255, 126, 64, 64, 64, 0, 64, 64, 64, 0, 255, 255, 255, 126, 255, 255, 255, 229, 255, 255, 255, 127, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 128, 255, 255, 255, 229, 255, 255, 255, 125, 255, 255, 255, 125, 255, 255, 255, 229, 255, 255, 255, 128, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 128, 128, 0, 255, 255, 255, 129, 255, 255, 255, 229, 255, 255, 255, 229, 255, 255, 255, 129, 128, 128, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 127, 255, 255, 255, 229, 255, 255, 255, 229, 255, 255, 255, 127, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 126, 255, 255, 255, 229, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 229, 255, 255, 255, 126, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 64, 64, 0, 255, 255, 255, 125, 255, 255, 255, 229, 255, 255, 255, 128, 64, 64, 64, 0, 64, 64, 64, 0, 255, 255, 255, 128, 255, 255, 255, 229, 255, 255, 255, 125, 64, 64, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 12, 255, 255, 255, 190, 255, 255, 255, 129, 128, 128, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 128, 128, 0, 255, 255, 255, 129, 255, 255, 255, 190, 191, 191, 191, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 13, 191, 191, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 191, 191, 0, 191, 191, 191, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
-"format": "RGBA8",
-"height": 12,
-"mipmaps": false,
-"width": 12
-}
-
-[sub_resource type="ImageTexture" id=97]
-image = SubResource( 154 )
-size = Vector2( 12, 12 )
-
-[sub_resource type="Image" id=155]
-data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 69, 69, 32, 255, 92, 92, 93, 64, 23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 23, 23, 0, 255, 92, 92, 93, 191, 68, 68, 32, 0, 0, 0, 0, 0, 0, 0, 0, 255, 92, 92, 94, 255, 93, 93, 255, 255, 92, 92, 141, 64, 23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 23, 23, 0, 255, 92, 92, 141, 255, 93, 93, 255, 255, 92, 92, 94, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 255, 69, 69, 142, 255, 93, 93, 255, 255, 92, 92, 140, 64, 23, 23, 0, 64, 23, 23, 0, 255, 92, 92, 140, 255, 93, 93, 255, 255, 69, 69, 142, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 255, 69, 69, 143, 255, 93, 93, 255, 255, 92, 92, 139, 255, 92, 92, 139, 255, 93, 93, 255, 255, 69, 69, 143, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 255, 69, 69, 144, 255, 93, 93, 255, 255, 93, 93, 255, 255, 69, 69, 144, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 23, 23, 0, 255, 85, 85, 141, 255, 93, 93, 255, 255, 93, 93, 255, 255, 85, 85, 141, 64, 23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 23, 23, 0, 255, 92, 92, 141, 255, 93, 93, 255, 255, 69, 69, 142, 255, 69, 69, 142, 255, 93, 93, 255, 255, 92, 92, 140, 64, 23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 23, 23, 0, 255, 92, 92, 139, 255, 93, 93, 255, 255, 69, 69, 143, 191, 0, 0, 0, 191, 0, 0, 0, 255, 69, 69, 143, 255, 93, 93, 255, 255, 92, 92, 139, 64, 23, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 92, 92, 96, 255, 93, 93, 255, 255, 69, 69, 144, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 255, 69, 69, 144, 255, 93, 93, 255, 255, 92, 92, 96, 0, 0, 0, 0, 0, 0, 0, 0, 191, 69, 69, 33, 255, 92, 92, 99, 191, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 1, 255, 92, 92, 99, 191, 69, 69, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
-"format": "RGBA8",
-"height": 12,
-"mipmaps": false,
-"width": 12
-}
-
-[sub_resource type="ImageTexture" id=93]
-image = SubResource( 155 )
-size = Vector2( 12, 12 )
-
 [sub_resource type="CircleShape2D" id=117]
+
+[sub_resource type="RectangleShape2D" id=133]
 
 [node name="Experiment 1" type="Node2D"]
 script = ExtResource( 12 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( -128, 49 )
 
-[node name="SS2D_Shape_Closed2" type="Node2D" parent="StaticBody2D"]
+[node name="Texture" type="Node2D" parent="Ground"]
 script = ExtResource( 8 )
-_points = SubResource( 150 )
+_points = SubResource( 148 )
 material_overrides = {
 }
 shape_material = SubResource( 19 )
@@ -267,9 +188,9 @@ flip_edges = false
 render_edges = true
 collision_size = 32.0
 collision_offset = 0.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+collision_polygon_node_path = NodePath("../Collision")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="Collision" type="CollisionPolygon2D" parent="Ground"]
 modulate = Color( 1, 1, 1, 0.3 )
 polygon = PoolVector2Array( 6.92026, 83.1844, 191.403, 83.7522, 195.742, 84.0977, 201.588, 85.4198, 217.62, 90.7268, 265.669, 111.246, 1400.22, 709.588, 1445.84, 730.097, 1460.52, 735.387, 1465.65, 736.666, 1487.98, 737.712, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4864, 755.346, -55.4679, 419.433, -39.6559, 189.762, -31.431, 146.743, -26.5378, 128.723, -21.0938, 113.35, -15.0505, 100.871, -6.98737, 90.658 )
 
@@ -282,305 +203,12 @@ gravity_scale = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
 
-[node name="info" type="VBoxContainer" parent="."]
-margin_left = 604.0
-margin_top = 4.0
-margin_right = 681.0
-margin_bottom = 78.0
-
-[node name="FPS" type="Label" parent="info"]
-margin_right = 77.0
-margin_bottom = 14.0
-text = "FPS:"
-
-[node name="Height" type="Label" parent="info"]
-margin_top = 18.0
-margin_right = 77.0
-margin_bottom = 32.0
-text = "h:"
-
-[node name="Velocity" type="Label" parent="info"]
-margin_top = 36.0
-margin_right = 77.0
-margin_bottom = 50.0
-text = "v:"
-
-[node name="COE_info" type="Control" parent="."]
-margin_left = 50.0
-margin_top = 316.0
-margin_right = 289.0
-margin_bottom = 547.0
-rect_scale = Vector2( 2, 2 )
-
-[node name="PieChart" type="Control" parent="COE_info"]
-visible = false
-margin_left = -7.0
-margin_top = -538.0
-margin_right = 33.0
-margin_bottom = -498.0
-
-[node name="Pie" type="TextureProgress" parent="COE_info/PieChart"]
-margin_left = 158.0
-margin_top = 633.5
-margin_right = 222.0
-margin_bottom = 697.5
-texture_under = ExtResource( 14 )
-texture_progress = ExtResource( 13 )
-fill_mode = 4
-
-[node name="Label" type="Label" parent="COE_info/PieChart"]
-margin_left = 164.0
-margin_top = 698.5
-margin_right = 183.0
-margin_bottom = 729.5
-custom_colors/font_color = Color( 0, 0.537255, 0.631373, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "KE
-"
-
-[node name="Label2" type="Label" parent="COE_info/PieChart"]
-margin_left = 196.0
-margin_top = 699.5
-margin_right = 215.0
-margin_bottom = 730.5
-custom_colors/font_color = Color( 0.862745, 0.101961, 0.203922, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "PE
-"
-
-[node name="VerticalBars" type="Control" parent="COE_info"]
-margin_left = -7.0
-margin_top = -538.0
-margin_right = 33.0
-margin_bottom = -498.0
-
-[node name="ke" type="ProgressBar" parent="COE_info/VerticalBars"]
-margin_left = 17.0
-margin_top = 717.5
-margin_right = 167.0
-margin_bottom = 742.5
-rect_min_size = Vector2( 150, 25 )
-rect_rotation = -90.0
-theme = SubResource( 35 )
-custom_styles/bg = SubResource( 37 )
-
-[node name="pe" type="ProgressBar" parent="COE_info/VerticalBars"]
-margin_left = 50.0
-margin_top = 717.5
-margin_right = 200.0
-margin_bottom = 742.5
-rect_min_size = Vector2( 150, 25 )
-rect_rotation = -90.0
-theme = SubResource( 35 )
-custom_styles/bg = SubResource( 38 )
-
-[node name="te" type="ProgressBar" parent="COE_info/VerticalBars"]
-margin_left = 82.0
-margin_top = 717.5
-margin_right = 232.0
-margin_bottom = 742.5
-rect_min_size = Vector2( 150, 25 )
-rect_rotation = -90.0
-theme = SubResource( 35 )
-custom_styles/bg = SubResource( 39 )
-
-[node name="ke_l" type="Label" parent="COE_info/VerticalBars"]
-margin_left = 21.0
-margin_top = 720.5
-margin_right = 40.0
-margin_bottom = 734.5
-text = "KE"
-
-[node name="pe_l" type="Label" parent="COE_info/VerticalBars"]
-margin_left = 55.0
-margin_top = 720.5
-margin_right = 74.0
-margin_bottom = 734.5
-text = "PE"
-
-[node name="te_l" type="Label" parent="COE_info/VerticalBars"]
-margin_left = 86.0
-margin_top = 720.5
-margin_right = 105.0
-margin_bottom = 734.5
-text = "TE"
-
-[node name="UI" type="Panel" parent="."]
-margin_left = 1082.0
-margin_top = 22.0
-margin_right = 1262.0
-margin_bottom = 236.0
-
-[node name="b_toggle" type="CheckButton" parent="UI"]
-margin_left = 16.0
-margin_top = 13.0
-margin_right = 176.0
-margin_bottom = 53.0
-pressed = true
-text = "Vertical Bars"
-
-[node name="p_toggle" type="CheckButton" parent="UI"]
-margin_left = 17.0
-margin_top = 52.0
-margin_right = 177.0
-margin_bottom = 92.0
-text = "Pie Chart"
-
-[node name="Reset_button" type="Button" parent="UI"]
-margin_left = 44.0
-margin_top = 143.0
-margin_right = 137.0
-margin_bottom = 165.0
-text = "Reset"
-icon = SubResource( 70 )
-
-[node name="Start_button" type="Button" parent="UI"]
-margin_left = 44.0
-margin_top = 115.0
-margin_right = 137.0
-margin_bottom = 137.0
-text = "Start"
-icon = SubResource( 135 )
-
-[node name="graph_button" type="Button" parent="UI"]
-margin_left = 44.0
-margin_top = 172.0
-margin_right = 137.0
-margin_bottom = 194.0
-text = "Graph"
-icon = SubResource( 73 )
-
-[node name="Loop" type="CheckBox" parent="UI"]
-margin_left = 19.0
-margin_top = 86.0
-margin_right = 78.0
-margin_bottom = 110.0
-pressed = true
-text = "Loop"
-expand_icon = true
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1406, 737 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -59, -147 )
 shape = SubResource( 55 )
-
-[node name="Graph_Window" type="WindowDialog" parent="."]
-margin_left = 27.0
-margin_top = 65.0
-margin_right = 1264.0
-margin_bottom = 685.0
-custom_colors/title_color = Color( 0.478431, 0.027451, 0.25098, 1 )
-custom_icons/close_highlight = SubResource( 97 )
-custom_icons/close = SubResource( 93 )
-window_title = "Visualization"
-
-[node name="KE_vs_v" type="Control" parent="Graph_Window"]
-margin_left = 18.0
-margin_top = 16.0
-margin_right = 548.0
-margin_bottom = 536.0
-script = ExtResource( 15 )
-background_color = Color( 0, 0, 0, 1 )
-x_axis_min_value = 0.0
-x_axis_max_value = 10.0
-x_axis_grad_number = 11
-x_axis_label = ""
-y_axis_min_value = 0.0
-y_axis_max_value = 1.0
-y_axis_grad_number = 7
-y_axis_label = ""
-grid_horizontal_visible = false
-grid_vertical_visible = false
-
-[node name="PE_vs_h" type="Control" parent="Graph_Window"]
-margin_left = 548.0
-margin_top = 16.0
-margin_right = 1078.0
-margin_bottom = 536.0
-script = ExtResource( 15 )
-background_color = Color( 0, 0, 0, 1 )
-x_axis_min_value = 0.0
-x_axis_max_value = 10.0
-x_axis_grad_number = 11
-x_axis_label = ""
-y_axis_min_value = 0.0
-y_axis_max_value = 1.0
-y_axis_grad_number = 7
-y_axis_label = ""
-grid_horizontal_visible = false
-grid_vertical_visible = false
-
-[node name="Mass_Slider" type="HSlider" parent="Graph_Window"]
-margin_left = 1085.0
-margin_top = 120.0
-margin_right = 1229.0
-margin_bottom = 136.0
-min_value = 1.0
-max_value = 5.0
-step = 0.1
-value = 1.0
-
-[node name="Label" type="Label" parent="Graph_Window/Mass_Slider"]
-margin_top = -24.0
-margin_right = 38.0
-margin_bottom = -7.0
-text = "Mass"
-
-[node name="SliderLabel" type="Label" parent="Graph_Window/Mass_Slider"]
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 4
-text = "100"
-align = 1
-valign = 1
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_initialized_": true
-}
-custom_slider_path = NodePath("..")
-
-[node name="Gravity_Slider" type="HSlider" parent="Graph_Window"]
-margin_left = 1085.0
-margin_top = 166.0
-margin_right = 1229.0
-margin_bottom = 182.0
-min_value = 5.0
-max_value = 20.0
-step = 0.1
-value = 9.8
-
-[node name="Label" type="Label" parent="Graph_Window/Gravity_Slider"]
-margin_top = -24.0
-margin_right = 38.0
-margin_bottom = -7.0
-text = "Gravity"
-
-[node name="SliderLabel" type="Label" parent="Graph_Window/Gravity_Slider"]
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 4
-text = "100"
-align = 1
-valign = 1
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_initialized_": true
-}
-custom_slider_path = NodePath("..")
-
-[node name="Pull" type="Area2D" parent="."]
-visible = false
-gravity = 9.8
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Pull"]
-modulate = Color( 1, 1, 1, 0.3 )
-position = Vector2( -31, -76 )
-scale = Vector2( 1.08865, 1.1377 )
-polygon = PoolVector2Array( 139.623, 51.8589, 1308.97, 683.835, 1307.13, 742.726, 80.8344, 148.545 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 position = Vector2( 17, 29 )
@@ -645,17 +273,24 @@ position = Vector2( 1192, 635 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/CP10"]
 shape = SubResource( 117 )
 
-[connection signal="toggled" from="UI/b_toggle" to="." method="_on_b_toggle_toggled"]
-[connection signal="pressed" from="UI/p_toggle" to="." method="_on_p_toggle_pressed"]
-[connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]
-[connection signal="pressed" from="UI/Reset_button" to="." method="_on_Reset_button_pressed"]
-[connection signal="pressed" from="UI/Start_button" to="." method="_on_Start_button_pressed"]
-[connection signal="pressed" from="UI/graph_button" to="." method="_on_graph_button_pressed"]
-[connection signal="toggled" from="UI/Loop" to="." method="_on_Loop_toggled"]
+[node name="Exp1_UI" parent="." instance=ExtResource( 13 )]
+pause_mode = 2
+
+[node name="CarStopper" type="StaticBody2D" parent="."]
+position = Vector2( 114, 103 )
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarStopper"]
+shape = SubResource( 133 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 101.0
+margin_top = 178.0
+margin_right = 135.0
+margin_bottom = 208.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="popup_hide" from="Graph_Window" to="." method="_on_Graph_Window_popup_hide"]
-[connection signal="value_changed" from="Graph_Window/Mass_Slider" to="." method="_on_Mass_Slider_value_changed"]
-[connection signal="value_changed" from="Graph_Window/Gravity_Slider" to="." method="_on_Mass_Slider_value_changed"]
 [connection signal="body_entered" from="CheckPoints/CP1" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP2" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP3" to="." method="_on_CP1_body_entered"]
@@ -666,3 +301,4 @@ shape = SubResource( 117 )
 [connection signal="body_entered" from="CheckPoints/CP8" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP9" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP10" to="." method="_on_CP1_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
