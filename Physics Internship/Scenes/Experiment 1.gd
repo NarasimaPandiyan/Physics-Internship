@@ -118,7 +118,6 @@ func _on_Area2D_body_entered(body):
 
 func _on_Loop_toggled(button_pressed):
 	loop = button_pressed
-	
 func reload():
 	$Car.show()
 	$Car.position = $SpawnPoint.position
