@@ -1,6 +1,5 @@
 extends Control
 
-
 export var speed = 6000
 export var max_speed = 50
 var wheels = []
@@ -25,3 +24,7 @@ func _on_Start_button_pressed():
 func _on_p_toggle_toggled(button_pressed):
 	$COE_info/PieChart.visible = button_pressed
 
+
+
+func _on_Graph_Window_popup_hide():
+	get_node("/root/Experiment 1/graph_button").show()

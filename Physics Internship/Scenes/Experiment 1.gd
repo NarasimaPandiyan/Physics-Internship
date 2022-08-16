@@ -91,6 +91,7 @@ func _on_Button_pressed():
 
 func _on_graph_button_pressed():
 	$Exp1_UI/Graph_Window.popup()
+	$graph_button.hide()
 	
 
 func _on_Area2D_body_entered(body):
