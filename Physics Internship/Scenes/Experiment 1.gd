@@ -19,8 +19,8 @@ var v_data = []
 var started = false
 func _ready():
 	wheels = get_tree().get_nodes_in_group("Wheel")
-	ke_vs_v_id = $Exp1_UI/Graph_Window/KE_vs_v.add_curve("KE vs V",Color.dodgerblue)
-	pe_vs_h_id = $"Exp1_UI/Graph_Window/PE_vs_h".add_curve("PE vs H",Color.crimson)
+	ke_vs_v_id = $Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.add_curve("KE vs V",Color.dodgerblue)
+	pe_vs_h_id = $Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.add_curve("PE vs H",Color.crimson)
 	
 func _physics_process(delta):
 	#Calculating parameters
@@ -65,22 +65,16 @@ func _physics_process(delta):
 	$Exp1_UI/COE_info/PieChart/Pie.value = ke
 	
 	#plotting graph
-	if $Car.position < Vector2(1280,720):
-		$Exp1_UI/Graph_Window/KE_vs_v.x_axis_label = "v"
-		$Exp1_UI/Graph_Window/KE_vs_v.y_axis_label = "KE"
-		$Exp1_UI/Graph_Window/KE_vs_v.y_axis_max_value = te*m
-		$Exp1_UI/Graph_Window/KE_vs_v.x_axis_max_value = 20.0*m
-		$Exp1_UI/Graph_Window/KE_vs_v.add_point(ke_vs_v_id,Vector2(v,ke))
-		
-		$Exp1_UI/Graph_Window/PE_vs_h.x_axis_label = "h"
-		$Exp1_UI/Graph_Window/PE_vs_h.y_axis_label = "PE"
-		$Exp1_UI/Graph_Window/PE_vs_h.y_axis_max_value = 150*m
-		$Exp1_UI/Graph_Window/PE_vs_h.x_axis_max_value = 20.0
-		$Exp1_UI/Graph_Window/PE_vs_h.add_point(pe_vs_h_id,Vector2(h,pe))
-		
-	else:
-		#$Graph_Window/Graph2D.clear_curve(ke_vs_v_id)
-		pass
+	#$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.set_y_axis_label("KE")
+	#$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.set_y_axis_max_value(te*m)
+	#$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.set_x_axis_max_value(20.0*m)
+	#$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.add_point(ke_vs_v_id,Vector2(v,ke))
+	
+	#$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.set_x_axis_label("h")
+	#$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.set_y_axis_label("PE")
+	#$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.set_y_axis_max_value(150*m)
+	#$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.set_x_axis_max_value(20.0)
+	#$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.add_point(pe_vs_h_id,Vector2(h,pe))
 	
 	
 func get_distance(point1,point2):
@@ -88,12 +82,7 @@ func get_distance(point1,point2):
 	return sqrt(pow(point2[0]-point1[0],2)+pow(point2[1]-point1[1],2))/M
 	
 
-func _on_p_toggle_toggled(button_pressed):
-	$Exp1_UI/COE_info/PieChart.visible = button_pressed
 
-
-func _on_b_toggle_toggled(button_pressed):
-	$Exp1_UI/COE_info/VerticalBars.visible = button_pressed
 
 
 func _on_Button_pressed():
@@ -105,38 +94,17 @@ func _on_graph_button_pressed():
 	
 
 func _on_Area2D_body_entered(body):
-	if loop:
-		$Exp1_UI/Graph_Window/KE_vs_v.clear_curve(ke_vs_v_id)
-		$Exp1_UI/Graph_Window/PE_vs_h.clear_curve(ke_vs_v_id)
-		
-		reload()
-	else:
-		$Car.hide()
-		$Exp1_UI/info/Height.hide()
-		$Exp1_UI/info/Velocity.hide()
+	$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.clear_curve(ke_vs_v_id)
+	$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.clear_curve(ke_vs_v_id)
+	get_tree().reload_current_scene()
 
 
 func _on_Loop_toggled(button_pressed):
 	loop = button_pressed
-func reload():
-	$Car.show()
-	$Car.position = $SpawnPoint.position
-	$Car.rotation_degrees = $SpawnPoint.rotation_degrees
-	$Car.applied_force = Vector2.ZERO
-	$Car.applied_torque = 0
-	$Car.angular_velocity = 0
-	$Car.linear_velocity = Vector2.ZERO
-	for wheel in wheels:
-		wheel.angular_velocity = 0
-		wheel.linear_velocity = Vector2(0,0)
-		wheel.applied_torque = 0
-		wheel.applied_force = Vector2(0,0)
-
 
 
 func _on_Reset_button_pressed():
 	get_tree().reload_current_scene()
-	reload()
 
 
 func _on_Graph_Window_popup_hide():
@@ -149,15 +117,7 @@ func _on_Mass_Slider_value_changed(value):
 
 
 func _on_CP1_body_entered(body):
-	print(h)
+	h_data.append(h)
+	v_data.append(v)
 
-
-func stopper(visible:bool):
-	print("hey")
-	if !visible:
-		$CarStopper.collision_layer = 3
-		$CarStopper.collision_mask = 3
-	else:
-		$CarStopper.collision_layer = 1
-		$CarStopper.collision_mask = 1
 	

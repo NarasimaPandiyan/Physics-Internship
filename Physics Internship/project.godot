@@ -206,25 +206,26 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
+window/size/resizable=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/github-integration/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/todo-cards/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
 
 [gdnative]
 
-singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib", "res://pythonscript.gdnlib" ]
 
 [physics]
 

@@ -1,29 +1,32 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+export var speed = 6000
+export var max_speed = 50
+var wheels = []
 func _ready():
-	pass
+	wheels = get_tree().get_nodes_in_group("Wheel")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_b_toggle_toggled(button_pressed):
-	pass # Replace with function body.
+	$COE_info/VerticalBars.visible = button_pressed
 
 
 func _on_Reset_button_pressed():
 	get_tree().reload_current_scene()
-	get_parent().reload()
 
 
 func _on_Start_button_pressed():
-	get_parent().stopper(false)
+	for wheel in wheels:
+		if wheel.angular_velocity < max_speed:
+			wheel.apply_torque_impulse(speed * get_physics_process_delta_time() * 60)
+
+func _on_p_toggle_toggled(button_pressed):
+	$COE_info/PieChart.visible = button_pressed
+
+
+func _on_graph_button_pressed():
+	$Graph_Window.popup()
+	var h = get_parent()
+	var j = get_parent().h

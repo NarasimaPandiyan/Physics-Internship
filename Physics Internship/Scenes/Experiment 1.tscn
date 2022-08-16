@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=2]
@@ -14,107 +14,107 @@
 [ext_resource path="res://Scenes/Experiment 1.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Exp1 UI.tscn" type="PackedScene" id=13]
 
-[sub_resource type="Resource" id=134]
+[sub_resource type="Resource" id=118]
 script = ExtResource( 5 )
 texture_idx = 6
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=135]
+[sub_resource type="Resource" id=119]
 script = ExtResource( 1 )
 position = Vector2( 6.92531, 83.2444 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 134 )
+properties = SubResource( 118 )
 
-[sub_resource type="Resource" id=136]
+[sub_resource type="Resource" id=120]
 script = ExtResource( 5 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=137]
+[sub_resource type="Resource" id=121]
 script = ExtResource( 1 )
 position = Vector2( 1469.24, 737.075 )
 point_in = Vector2( -60.0061, 2.40024 )
 point_out = Vector2( 60.0061, -2.40024 )
-properties = SubResource( 136 )
+properties = SubResource( 120 )
 
-[sub_resource type="Resource" id=138]
+[sub_resource type="Resource" id=122]
 script = ExtResource( 5 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=139]
+[sub_resource type="Resource" id=123]
 script = ExtResource( 1 )
 position = Vector2( 1343.32, 754.423 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 138 )
+properties = SubResource( 122 )
 
-[sub_resource type="Resource" id=140]
+[sub_resource type="Resource" id=124]
 script = ExtResource( 5 )
 texture_idx = 6
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=141]
+[sub_resource type="Resource" id=125]
 script = ExtResource( 1 )
 position = Vector2( 6.92531, 83.2444 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 140 )
+properties = SubResource( 124 )
 
-[sub_resource type="Resource" id=142]
+[sub_resource type="Resource" id=126]
 script = ExtResource( 5 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=143]
+[sub_resource type="Resource" id=127]
 script = ExtResource( 1 )
 position = Vector2( -51.2276, 752.022 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 142 )
+properties = SubResource( 126 )
 
-[sub_resource type="Resource" id=144]
+[sub_resource type="Resource" id=128]
 script = ExtResource( 5 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=145]
+[sub_resource type="Resource" id=129]
 script = ExtResource( 1 )
 position = Vector2( 644.644, 747.022 )
 point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
-properties = SubResource( 144 )
+properties = SubResource( 128 )
 
-[sub_resource type="Resource" id=146]
+[sub_resource type="Resource" id=130]
 script = ExtResource( 5 )
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id=147]
+[sub_resource type="Resource" id=131]
 script = ExtResource( 1 )
 position = Vector2( 191.402, 83.7656 )
 point_in = Vector2( -75.9819, 2.35971 )
 point_out = Vector2( 75.9819, -2.35971 )
-properties = SubResource( 146 )
+properties = SubResource( 130 )
 
-[sub_resource type="Resource" id=148]
+[sub_resource type="Resource" id=132]
 script = ExtResource( 4 )
 _points = {
-0: SubResource( 135 ),
-1: SubResource( 137 ),
-2: SubResource( 139 ),
-3: SubResource( 141 ),
-4: SubResource( 143 ),
-6: SubResource( 145 ),
-7: SubResource( 147 )
+0: SubResource( 119 ),
+1: SubResource( 121 ),
+2: SubResource( 123 ),
+3: SubResource( 125 ),
+4: SubResource( 127 ),
+6: SubResource( 129 ),
+7: SubResource( 131 )
 }
 _point_order = [ 0, 7, 1, 2, 6, 4, 3 ]
 _constraints = {
@@ -168,8 +168,6 @@ extents = Vector2( 10, 201 )
 
 [sub_resource type="CircleShape2D" id=117]
 
-[sub_resource type="RectangleShape2D" id=133]
-
 [node name="Experiment 1" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -178,7 +176,7 @@ position = Vector2( -128, 49 )
 
 [node name="Texture" type="Node2D" parent="Ground"]
 script = ExtResource( 8 )
-_points = SubResource( 148 )
+_points = SubResource( 132 )
 material_overrides = {
 }
 shape_material = SubResource( 19 )
@@ -194,11 +192,8 @@ collision_polygon_node_path = NodePath("../Collision")
 modulate = Color( 1, 1, 1, 0.3 )
 polygon = PoolVector2Array( 6.92026, 83.1844, 191.403, 83.7522, 195.742, 84.0977, 201.588, 85.4198, 217.62, 90.7268, 265.669, 111.246, 1400.22, 709.588, 1445.84, 730.097, 1460.52, 735.387, 1465.65, 736.666, 1487.98, 737.712, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4864, 755.346, -55.4679, 419.433, -39.6559, 189.762, -31.431, 146.743, -26.5378, 128.723, -21.0938, 113.35, -15.0505, 100.871, -6.98737, 90.658 )
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2( 50, 93 )
-
 [node name="Car" parent="." instance=ExtResource( 11 )]
-position = Vector2( 50, 93 )
+position = Vector2( 29, 93 )
 gravity_scale = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
@@ -214,7 +209,7 @@ shape = SubResource( 55 )
 position = Vector2( 17, 29 )
 
 [node name="CP1" type="Area2D" parent="CheckPoints"]
-position = Vector2( 128, 96 )
+position = Vector2( 130, 87 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/CP1"]
 shape = SubResource( 117 )
@@ -276,20 +271,6 @@ shape = SubResource( 117 )
 [node name="Exp1_UI" parent="." instance=ExtResource( 13 )]
 pause_mode = 2
 
-[node name="CarStopper" type="StaticBody2D" parent="."]
-position = Vector2( 114, 103 )
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CarStopper"]
-shape = SubResource( 133 )
-
-[node name="Button" type="Button" parent="."]
-margin_left = 101.0
-margin_top = 178.0
-margin_right = 135.0
-margin_bottom = 208.0
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP1" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP2" to="." method="_on_CP1_body_entered"]
@@ -301,4 +282,3 @@ margin_bottom = 208.0
 [connection signal="body_entered" from="CheckPoints/CP8" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP9" to="." method="_on_CP1_body_entered"]
 [connection signal="body_entered" from="CheckPoints/CP10" to="." method="_on_CP1_body_entered"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
