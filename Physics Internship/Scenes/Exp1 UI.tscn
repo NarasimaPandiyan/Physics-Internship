@@ -398,4 +398,3 @@ grid_vertical_visible = false
 [connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]
 [connection signal="pressed" from="UI/Reset_button" to="." method="_on_Reset_button_pressed"]
 [connection signal="pressed" from="UI/Start_button" to="." method="_on_Start_button_pressed"]
-[connection signal="pressed" from="UI/graph_button" to="." method="_on_graph_button_pressed"]

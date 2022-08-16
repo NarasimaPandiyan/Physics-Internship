@@ -25,8 +25,3 @@ func _on_Start_button_pressed():
 func _on_p_toggle_toggled(button_pressed):
 	$COE_info/PieChart.visible = button_pressed
 
-
-func _on_graph_button_pressed():
-	$Graph_Window.popup()
-	var h = get_parent()
-	var j = get_parent().h

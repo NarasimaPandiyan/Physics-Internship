@@ -3,8 +3,8 @@ extends Node2D
 const M = 50 #n number of pixels to represent a meter. here 50 pixels represent a meter
 var wheels = []
 var pos
-var h : float
-var v : float
+export var h : float
+export var v : float
 var m : float
 var g = 9.8
 var ke : float
