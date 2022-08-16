@@ -210,6 +210,9 @@ UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
+TableManager="*res://addons/AnomalyAcesTable/Scripts/TableManager.gd"
+TableConstants="*res://addons/AnomalyAcesTable/Scripts/Helper/TableConstants.gd"
+Global="*res://Scenes/Global.gd"
 
 [display]
 
@@ -221,7 +224,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/AnomalyAcesTable/plugin.cfg", "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
 
 [gdnative]
 

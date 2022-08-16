@@ -3,24 +3,76 @@ extends Node2D
 const M = 50 #n number of pixels to represent a meter. here 50 pixels represent a meter
 var wheels = []
 var pos
+
 export var h : float
 export var v : float
 var m : float
 var g = 9.8
+
 var ke : float
 var pe : float
 var te :float
+
 var ke_vs_v_id 
 var pe_vs_h_id
-const start_points = Vector2(68,8)
-var loop = true
+
 var h_data = []
 var v_data = []
-var started = false
+
+var table: TableManager.Table
+var tablePlugin: TableManager.Plugin
+
 func _ready():
+	if Global.GWindow_state:
+		$Graph_Window.popup()
 	wheels = get_tree().get_nodes_in_group("Wheel")
+	
 	ke_vs_v_id = $Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.add_curve("KE vs V",Color.dodgerblue)
 	pe_vs_h_id = $Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.add_curve("PE vs H",Color.crimson)
+	
+	tablePlugin = $Exp1_UI/Graph_Window/Data_Panel/Table
+	var colDefs = {
+		"foo":{
+			"columnId": "foo",
+			"columnName": "Foo",
+			"columnType": TableConstants.ColumnType.LABEL,
+						"columnAlign": TableConstants.Align.CENTER
+		},
+		"bar":{
+			"columnId": "bar",
+			"columnName": "Bar",
+			"columnType": TableConstants.ColumnType.BUTTON,
+			"columnImage": "res://icon.png",
+			"columnFunc": funcref(self, "button_pressed"),
+			"columnAlign": TableConstants.Align.CENTER
+			
+		},
+		"foobar":{
+			"columnId": "foobar",
+			"columnName": "FooBar",
+			"columnType": TableConstants.ColumnType.TEXTURE_RECT,
+						"columnAlign": TableConstants.Align.CENTER
+			
+		},
+	}	
+	var data = [{
+			"foo":"10",
+			"bar":"Press Me",
+			"foobar": "res://icon.png"
+		}]
+	
+	
+	var textRect = TextureRect.new()
+	textRect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	textRect.set_texture(load("res://icon.png"))
+	var colNodeDefs = {
+		"textureRect": textRect
+	}
+	var tblConfig = TableManager.createTableConfig(colDefs)
+	table = TableManager.createTable(tablePlugin, tblConfig)
+	TableManager.setTableData(table, data)
+	
+	print(tablePlugin.to_string())
 	
 func _physics_process(delta):
 	#Calculating parameters
@@ -91,6 +143,7 @@ func _on_Button_pressed():
 
 func _on_graph_button_pressed():
 	$Exp1_UI/Graph_Window.popup()
+	Global.GWindow_state = true
 	$graph_button.hide()
 	
 
@@ -98,10 +151,6 @@ func _on_Area2D_body_entered(body):
 	$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.clear_curve(ke_vs_v_id)
 	$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.clear_curve(ke_vs_v_id)
 	get_tree().reload_current_scene()
-
-
-func _on_Loop_toggled(button_pressed):
-	loop = button_pressed
 
 
 func _on_Reset_button_pressed():
@@ -121,4 +170,8 @@ func _on_CP1_body_entered(body):
 	h_data.append(h)
 	v_data.append(v)
 
-	
+func getCollectedHData():
+	return h_data
+
+func getCollectedVData():
+	return v_data

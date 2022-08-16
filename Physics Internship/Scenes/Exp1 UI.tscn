@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Images/Other/Pie_Bg.png" type="Texture" id=1]
 [ext_resource path="res://Images/Other/Pie_Fill.png" type="Texture" id=2]
 [ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=3]
 [ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=4]
+[ext_resource path="res://addons/AnomalyAcesTable/Scripts/Helper/TablePlugin.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Exp1 UI.gd" type="Script" id=8]
 
 [sub_resource type="Theme" id=1]
@@ -329,6 +330,15 @@ margin_top = 315.0
 margin_right = -25.0
 margin_bottom = -25.0
 
+[node name="Table" type="Control" parent="Graph_Window/Data_Panel"]
+margin_right = 120.0
+margin_bottom = 260.0
+script = ExtResource( 5 )
+table_header_theme = null
+table_header_cell_theme = null
+table_row_theme = null
+table_row_cell_theme = null
+
 [node name="Graph_Panel" type="Panel" parent="Graph_Window"]
 margin_left = 25.0
 margin_top = 25.0
@@ -372,7 +382,6 @@ grid_horizontal_visible = false
 grid_vertical_visible = false
 
 [connection signal="toggled" from="UI/b_toggle" to="." method="_on_b_toggle_toggled"]
-[connection signal="pressed" from="UI/p_toggle" to="." method="_on_p_toggle_pressed"]
 [connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]
 [connection signal="pressed" from="UI/Reset_button" to="." method="_on_Reset_button_pressed"]
 [connection signal="pressed" from="UI/Start_button" to="." method="_on_Start_button_pressed"]
