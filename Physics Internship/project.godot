@@ -224,7 +224,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/AnomalyAcesTable/plugin.cfg", "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/AnomalyAcesTable/plugin.cfg", "res://addons/GDCharts/plugin.cfg", "res://addons/Iconify/plugin.cfg", "res://addons/SliderLabel/plugin.cfg", "res://addons/graph_2d/plugin.cfg", "res://addons/ridiculous_coding/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg" )
 
 [gdnative]
 

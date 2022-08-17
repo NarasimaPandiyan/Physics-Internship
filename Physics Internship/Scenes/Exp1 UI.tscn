@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Images/Other/Pie_Bg.png" type="Texture" id=1]
 [ext_resource path="res://Images/Other/Pie_Fill.png" type="Texture" id=2]
 [ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=3]
 [ext_resource path="res://addons/graph_2d/graph_2d.gd" type="Script" id=4]
 [ext_resource path="res://addons/AnomalyAcesTable/Scripts/Helper/TablePlugin.gd" type="Script" id=5]
+[ext_resource path="res://addons/GDCharts/script.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Exp1 UI.gd" type="Script" id=8]
 
 [sub_resource type="Theme" id=1]
@@ -240,7 +241,6 @@ text = "Start"
 icon = SubResource( 8 )
 
 [node name="Graph_Window" type="WindowDialog" parent="."]
-visible = true
 margin_left = 27.0
 margin_top = 65.0
 margin_right = 1227.0
@@ -346,6 +346,7 @@ margin_right = 1025.0
 margin_bottom = 595.0
 
 [node name="Ke_vs_V" type="Control" parent="Graph_Window/Graph_Panel"]
+visible = false
 margin_left = 510.0
 margin_top = 15.0
 margin_right = 980.0
@@ -364,6 +365,7 @@ grid_horizontal_visible = false
 grid_vertical_visible = false
 
 [node name="Pe_vs_H" type="Control" parent="Graph_Window/Graph_Panel"]
+visible = false
 margin_left = 20.0
 margin_top = 15.0
 margin_right = 500.0
@@ -380,6 +382,21 @@ y_axis_grad_number = 7
 y_axis_label = ""
 grid_horizontal_visible = false
 grid_vertical_visible = false
+
+[node name="KE vs v" type="ReferenceRect" parent="Graph_Window/Graph_Panel"]
+margin_left = 20.0
+margin_top = 15.0
+margin_right = 500.0
+margin_bottom = 555.0
+script = ExtResource( 6 )
+MAX_VALUES = 6
+
+[node name="PE vs h" type="ReferenceRect" parent="Graph_Window/Graph_Panel"]
+margin_left = 510.0
+margin_top = 15.0
+margin_right = 980.0
+margin_bottom = 555.0
+script = ExtResource( 6 )
 
 [connection signal="toggled" from="UI/b_toggle" to="." method="_on_b_toggle_toggled"]
 [connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]

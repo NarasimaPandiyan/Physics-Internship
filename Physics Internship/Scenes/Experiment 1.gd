@@ -16,15 +16,14 @@ var te :float
 var ke_vs_v_id 
 var pe_vs_h_id
 
-var h_data = []
-var v_data = []
 
 var table: TableManager.Table
 var tablePlugin: TableManager.Plugin
 
+onready var kev = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v"
 func _ready():
 	if Global.GWindow_state:
-		$Graph_Window.popup()
+		$Exp1_UI/Graph_Window.popup()
 	wheels = get_tree().get_nodes_in_group("Wheel")
 	
 	ke_vs_v_id = $Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.add_curve("KE vs V",Color.dodgerblue)
@@ -32,34 +31,19 @@ func _ready():
 	
 	tablePlugin = $Exp1_UI/Graph_Window/Data_Panel/Table
 	var colDefs = {
-		"foo":{
-			"columnId": "foo",
-			"columnName": "Foo",
+		"h":{
+			"columnId": "h",
+			"columnName": "h",
 			"columnType": TableConstants.ColumnType.LABEL,
 						"columnAlign": TableConstants.Align.CENTER
 		},
-		"bar":{
-			"columnId": "bar",
-			"columnName": "Bar",
-			"columnType": TableConstants.ColumnType.BUTTON,
-			"columnImage": "res://icon.png",
-			"columnFunc": funcref(self, "button_pressed"),
-			"columnAlign": TableConstants.Align.CENTER
-			
-		},
-		"foobar":{
-			"columnId": "foobar",
-			"columnName": "FooBar",
-			"columnType": TableConstants.ColumnType.TEXTURE_RECT,
+		"v":{
+			"columnId": "v",
+			"columnName": "v",
+			"columnType": TableConstants.ColumnType.LABEL,
 						"columnAlign": TableConstants.Align.CENTER
-			
 		},
 	}	
-	var data = [{
-			"foo":"10",
-			"bar":"Press Me",
-			"foobar": "res://icon.png"
-		}]
 	
 	
 	var textRect = TextureRect.new()
@@ -70,7 +54,7 @@ func _ready():
 	}
 	var tblConfig = TableManager.createTableConfig(colDefs)
 	table = TableManager.createTable(tablePlugin, tblConfig)
-	TableManager.setTableData(table, data)
+	TableManager.setTableData(table, Global.data)
 	
 	print(tablePlugin.to_string())
 	
@@ -92,8 +76,8 @@ func _physics_process(delta):
 	pe = round(pe)
 	te = round(te)
 	
-	h_data.append(round(h))
-	v_data.append(round(v))
+	Global.h_data.append(round(h))
+	Global.v_data.append(round(v))
 	
 	#updating info
 	$Exp1_UI/info/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
@@ -144,6 +128,12 @@ func _on_Button_pressed():
 func _on_graph_button_pressed():
 	$Exp1_UI/Graph_Window.popup()
 	Global.GWindow_state = true
+	kev.create_new_point({
+	label = str(Global.v_data[0]),
+	values = {
+	  KE = $Car.mass * Global.v_data[0] * Global.v_data[0] * 0.5
+	}
+  })
 	$graph_button.hide()
 	
 
@@ -167,11 +157,11 @@ func _on_Mass_Slider_value_changed(value):
 
 
 func _on_CP1_body_entered(body):
-	h_data.append(h)
-	v_data.append(v)
+	Global.h_data.append(h)
+	Global.v_data.append(v)
 
 func getCollectedHData():
-	return h_data
+	return Global.h_data
 
 func getCollectedVData():
-	return v_data
+	return Global.v_data
