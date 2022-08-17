@@ -26,6 +26,7 @@ func _on_b_toggle_toggled(button_pressed):
 
 func _on_Reset_button_pressed():
 	get_tree().reload_current_scene()
+	
 
 
 func _on_Start_button_pressed():
@@ -40,3 +41,4 @@ func _on_p_toggle_toggled(button_pressed):
 
 func _on_Graph_Window_popup_hide():
 	get_node("/root/Experiment 1/graph_button").show()
+	Global.GWindow_state = false

@@ -21,6 +21,8 @@ var table: TableManager.Table
 var tablePlugin: TableManager.Plugin
 
 onready var kev = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v"
+onready var peh = $"Exp1_UI/Graph_Window/Graph_Panel/PE vs h"
+
 func _ready():
 	if Global.GWindow_state:
 		$Exp1_UI/Graph_Window.popup()
@@ -135,7 +137,7 @@ func _on_graph_button_pressed():
 	}
   })
 	$graph_button.hide()
-	
+	clearChart()
 
 func _on_Area2D_body_entered(body):
 	$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.clear_curve(ke_vs_v_id)
@@ -165,3 +167,7 @@ func getCollectedHData():
 
 func getCollectedVData():
 	return Global.v_data
+
+func clearChart():
+	kev.clear_chart()
+	peh.clear_chart()
