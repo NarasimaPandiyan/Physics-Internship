@@ -202,7 +202,7 @@ _global_script_class_icons={
 
 config/name="Physics Internship"
 run/main_scene="res://Scenes/Experiment 1.tscn"
-config/icon="res://icon.png"
+config/icon="res://Images/Other/test-tube-line-144.png"
 
 [autoload]
 
@@ -213,12 +213,13 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 TableManager="*res://addons/AnomalyAcesTable/Scripts/TableManager.gd"
 TableConstants="*res://addons/AnomalyAcesTable/Scripts/Helper/TableConstants.gd"
 Global="*res://Scenes/Global.gd"
+lr="*res://Code/Regression.gd"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
-window/size/resizable=false
+mouse_cursor/custom_image="res://Images/Gui/cursor_pointer3D.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

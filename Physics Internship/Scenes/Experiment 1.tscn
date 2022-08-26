@@ -209,8 +209,6 @@ polygon = PoolVector2Array( 6.92026, 83.1844, 191.403, 83.7522, 195.742, 84.0977
 position = Vector2( 29, 93 )
 gravity_scale = 15.0
 
-[node name="Camera2D" type="Camera2D" parent="Car"]
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1406, 737 )
 

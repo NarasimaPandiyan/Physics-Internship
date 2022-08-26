@@ -181,7 +181,7 @@ func initialize(show_label, points_color = {}, animation_duration = 1.0):
 
 func set_labels(show_label):
 	current_show_label = show_label
-
+	print(show_label)
   # Reset values
 	min_y = 0.0
 	min_x = 0.0
@@ -365,7 +365,7 @@ func draw_line_chart():
 
 	if current_show_label & LABELS_TO_SHOW.Y_LABEL:
 		var ordinate_values = compute_ordinate_values(max_value, min_value)
-
+		
 		for ordinate_value in ordinate_values:
 			var label = format(ordinate_value)
 			var position = Vector2(max(0, 6.0 -label.length()) * 9.5, min_y + max_y - compute_y(ordinate_value))
@@ -602,9 +602,14 @@ func format(number, format_text_custom = '%.2f %s'):
 
 func compute_ordinate_values(max_value, min_value):
 	var amplitude = max_value - min_value
-	var ordinate_values = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
+	var ordinate_values = [-12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12]
 	var result = []
 	var ratio = 1
+	var inv = 10
+	if(max_value>100):
+		inv = 1
+	else:
+		inv = 10
 
 	for index in range(0, ordinary_factor):
 		var computed_ratio = pow(ordinary_factor, index)
@@ -613,8 +618,8 @@ func compute_ordinate_values(max_value, min_value):
 			ratio = computed_ratio
 			ordinate_values = []
 
-			for sub_index in range(-6, 6):
-				ordinate_values.push_back(5 * sub_index * computed_ratio / ordinary_factor)
+			for sub_index in range(-6,25):
+				ordinate_values.push_back(inv * sub_index * computed_ratio / ordinary_factor)
 
   # Keep only valid values
 	for value in ordinate_values:

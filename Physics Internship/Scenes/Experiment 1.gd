@@ -13,23 +13,22 @@ var ke : float
 var pe : float
 var te :float
 
-var ke_vs_v_id 
-var pe_vs_h_id
-
+var v_data = []
+var h_data = []
+var ke_data = []
+var pe_data = []
 
 var table: TableManager.Table
 var tablePlugin: TableManager.Plugin
 
 onready var kev = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v"
+onready var kevm = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v_m"
 onready var peh = $"Exp1_UI/Graph_Window/Graph_Panel/PE vs h"
 
 func _ready():
 	if Global.GWindow_state:
 		$Exp1_UI/Graph_Window.popup()
 	wheels = get_tree().get_nodes_in_group("Wheel")
-	
-	ke_vs_v_id = $Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.add_curve("KE vs V",Color.dodgerblue)
-	pe_vs_h_id = $Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.add_curve("PE vs H",Color.crimson)
 	
 	tablePlugin = $Exp1_UI/Graph_Window/Data_Panel/Table
 	var colDefs = {
@@ -47,13 +46,6 @@ func _ready():
 		},
 	}	
 	
-	
-	var textRect = TextureRect.new()
-	textRect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	textRect.set_texture(load("res://icon.png"))
-	var colNodeDefs = {
-		"textureRect": textRect
-	}
 	var tblConfig = TableManager.createTableConfig(colDefs)
 	table = TableManager.createTable(tablePlugin, tblConfig)
 	TableManager.setTableData(table, Global.data)
@@ -78,8 +70,6 @@ func _physics_process(delta):
 	pe = round(pe)
 	te = round(te)
 	
-	Global.h_data.append(round(h))
-	Global.v_data.append(round(v))
 	
 	#updating info
 	$Exp1_UI/info/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
@@ -130,20 +120,17 @@ func _on_Button_pressed():
 func _on_graph_button_pressed():
 	$Exp1_UI/Graph_Window.popup()
 	Global.GWindow_state = true
-	kev.create_new_point({
-	label = str(Global.v_data[0]),
-	values = {
-	  KE = $Car.mass * Global.v_data[0] * Global.v_data[0] * 0.5
-	}
-  })
+	Global.mass = $Car.mass
+	drawScatterKE(kev,Global.mass)
+	drawScatterKE(kevm,Global.mass)
 	$graph_button.hide()
-	clearChart()
+
 
 func _on_Area2D_body_entered(body):
-	$Exp1_UI/Graph_Window/Graph_Panel/Ke_vs_V.clear_curve(ke_vs_v_id)
-	$Exp1_UI/Graph_Window/Graph_Panel/Pe_vs_H.clear_curve(ke_vs_v_id)
+	Global.v_data = v_data
+	Global.ke_data = ke_data
 	get_tree().reload_current_scene()
-
+	
 
 func _on_Reset_button_pressed():
 	get_tree().reload_current_scene()
@@ -152,22 +139,77 @@ func _on_Reset_button_pressed():
 func _on_Graph_Window_popup_hide():
 	pass # Replace with function body.
 
-
-func _on_Mass_Slider_value_changed(value):
-	$Car.mass = value
-	
-
-
 func _on_CP1_body_entered(body):
-	Global.h_data.append(h)
-	Global.v_data.append(v)
-
+	h_data.append(h)
+	v_data.append(v)
+	ke_data.append(calcKE(m,v))
+	Global.data.append({
+		"h" : str(round(h)),
+		"v" : str(round(v))
+	})
+	
 func getCollectedHData():
 	return Global.h_data
 
 func getCollectedVData():
 	return Global.v_data
 
-func clearChart():
-	kev.clear_chart()
-	peh.clear_chart()
+func calcKE(mm,vv):
+	return mm*vv*vv*0.5
+
+func drawScatterKE(chart,mass):
+	chart.clear_chart()
+	chart.create_new_point({
+	label = str(Global.v_data[0]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[0])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[1]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[1])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[2]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[2])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[3]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[3])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[4]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[4])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[5]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[5])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[6]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[6])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[7]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[7])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[8]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[8])
+	}})
+	chart.create_new_point({
+	label = str(Global.v_data[9]),
+	values = {
+		 KE = calcKE(mass,Global.v_data[9])
+	}})
+	print(str(Global.ke_data)+"\n\n"+str(Global.v_data)+"\n\n")
+	lr.fit(Global.v_data,Global.ke_data)
+	var prediction = lr.batchPredict([10,11,12,13])
+	print(prediction,calcKE(mass,10))
