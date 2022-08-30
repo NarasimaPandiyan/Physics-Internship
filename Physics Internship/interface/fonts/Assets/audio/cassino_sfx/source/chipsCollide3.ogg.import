@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chipsCollide3.ogg-79973a4041da9ffd809c4b9bc120a365.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/cassino_sfx/source/chipsCollide3.ogg"
+dest_files=[ "res://.import/chipsCollide3.ogg-79973a4041da9ffd809c4b9bc120a365.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Code/Control1.gd" type="Script" id=2]
+[ext_resource path="res://Themes/new_theme.tres" type="Theme" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 359.0 ],
+"_edit_vertical_guides_": [ 640.0 ]
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_bottom = 1.0
+margin_right = 638.0
+theme = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 642.0
+margin_top = -4.0
+margin_right = 1283.0
+margin_bottom = 357.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 641.0
+margin_bottom = 31.0
+text = "hi
+"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 35.0
+margin_right = 641.0
+margin_bottom = 49.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 642.0
+margin_top = 361.0
+margin_right = 1277.0
+margin_bottom = 720.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_bottom = 359.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 4.0
+margin_top = 164.0
+margin_right = 38.0
+margin_bottom = 195.0
+text = "qfasd
+"

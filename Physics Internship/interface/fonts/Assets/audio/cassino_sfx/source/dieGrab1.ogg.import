@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dieGrab1.ogg-e082847609227c3343edf85297e4f9cb.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/cassino_sfx/source/dieGrab1.ogg"
+dest_files=[ "res://.import/dieGrab1.ogg-e082847609227c3343edf85297e4f9cb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

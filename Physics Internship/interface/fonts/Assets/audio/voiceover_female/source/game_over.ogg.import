@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/game_over.ogg-29d05010e27788b10df541e6b4b5a14b.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/voiceover_female/source/game_over.ogg"
+dest_files=[ "res://.import/game_over.ogg-29d05010e27788b10df541e6b4b5a14b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

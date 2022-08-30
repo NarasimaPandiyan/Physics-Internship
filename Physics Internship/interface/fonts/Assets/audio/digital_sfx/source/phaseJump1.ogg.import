@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaseJump1.ogg-14585d553ce2d3b0c8c454021e20b964.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/digital_sfx/source/phaseJump1.ogg"
+dest_files=[ "res://.import/phaseJump1.ogg-14585d553ce2d3b0c8c454021e20b964.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bookPlace3.ogg-5c9ab5708c4b42639094d34b4bbf9637.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/rpg_sfx/source/bookPlace3.ogg"
+dest_files=[ "res://.import/bookPlace3.ogg-5c9ab5708c4b42639094d34b4bbf9637.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

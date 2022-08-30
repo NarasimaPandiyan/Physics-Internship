@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you_win.ogg-006618c84f7a4cbcbf1cfb33705d976b.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/voiceover_male/source/you_win.ogg"
+dest_files=[ "res://.import/you_win.ogg-006618c84f7a4cbcbf1cfb33705d976b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

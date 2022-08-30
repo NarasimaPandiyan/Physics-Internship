@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=1]
 [ext_resource path="res://addons/rmsmartshape/materials/shape_material.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/Props/Car/Car.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Experiment 1.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Exp1 UI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DarkTheme/Dark.theme" type="Theme" id=14]
+[ext_resource path="res://Images/Terrain/PNG/game_background_3/game_background_3. 2_edited.png" type="Texture" id=15]
 
 [sub_resource type="Resource" id=135]
 script = ExtResource( 5 )
@@ -184,6 +186,16 @@ size = Vector2( 12, 12 )
 [node name="Experiment 1" type="Node2D"]
 script = ExtResource( 12 )
 
+[node name="Sky" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 13
+size_flags_vertical = 13
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 15 )
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( -128, 49 )
 
@@ -281,12 +293,16 @@ shape = SubResource( 117 )
 
 [node name="Exp1_UI" parent="." instance=ExtResource( 13 )]
 pause_mode = 2
+__meta__ = {
+"_edit_horizontal_guides_": [ 39.0, 671.0 ]
+}
 
 [node name="graph_button" type="Button" parent="."]
 margin_left = 1126.0
 margin_top = 194.0
 margin_right = 1219.0
 margin_bottom = 216.0
+theme = ExtResource( 14 )
 text = "Graph"
 icon = SubResource( 134 )
 

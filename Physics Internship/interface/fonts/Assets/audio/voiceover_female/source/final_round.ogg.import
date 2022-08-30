@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/final_round.ogg-a48457f277cee6ed71ea2078b04befb5.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/voiceover_female/source/final_round.ogg"
+dest_files=[ "res://.import/final_round.ogg-a48457f277cee6ed71ea2078b04befb5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

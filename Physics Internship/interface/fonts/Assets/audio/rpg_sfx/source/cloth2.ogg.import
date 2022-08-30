@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cloth2.ogg-48d79b5d48a5642623162579c81bab3f.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/rpg_sfx/source/cloth2.ogg"
+dest_files=[ "res://.import/cloth2.ogg-48d79b5d48a5642623162579c81bab3f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

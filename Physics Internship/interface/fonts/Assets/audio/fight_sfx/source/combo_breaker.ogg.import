@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/combo_breaker.ogg-593500414fe10bd52cc5d312261a302b.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/fight_sfx/source/combo_breaker.ogg"
+dest_files=[ "res://.import/combo_breaker.ogg-593500414fe10bd52cc5d312261a302b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

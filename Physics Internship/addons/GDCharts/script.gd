@@ -606,10 +606,11 @@ func compute_ordinate_values(max_value, min_value):
 	var result = []
 	var ratio = 1
 	var inv = 10
+	
 	if(max_value>100):
 		inv = 1
 	else:
-		inv = 10
+		inv = 20
 
 	for index in range(0, ordinary_factor):
 		var computed_ratio = pow(ordinary_factor, index)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chipsHandle4.ogg-0e642c2511db7ce9c12b23d5db1ec1ba.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/cassino_sfx/source/chipsHandle4.ogg"
+dest_files=[ "res://.import/chipsHandle4.ogg-0e642c2511db7ce9c12b23d5db1ec1ba.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

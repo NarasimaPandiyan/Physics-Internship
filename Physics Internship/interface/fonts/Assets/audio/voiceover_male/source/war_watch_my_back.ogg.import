@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_watch_my_back.ogg-fe7d28a95487859a393cfe6282d0b021.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/voiceover_male/source/war_watch_my_back.ogg"
+dest_files=[ "res://.import/war_watch_my_back.ogg-fe7d28a95487859a393cfe6282d0b021.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

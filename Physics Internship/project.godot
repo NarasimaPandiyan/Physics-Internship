@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
-"base": "",
+"base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "RMSmartShapeAnchor2D",
 "language": "GDScript",
 "path": "res://addons/rmsmartshape/RMSmartShapeAnchor2D.gd"
+}, {
+"base": "Object",
+"class": "RNGTools",
+"language": "GDScript",
+"path": "res://addons/rngtools/RNGTools.gd"
 }, {
 "base": "PanelContainer",
 "class": "RepositoryItem",
@@ -174,6 +179,7 @@ _global_script_class_icons={
 "RMS2D_VertexPropertiesArray": "",
 "RMSmartShape2D": "res://addons/rmsmartshape/assets/LEGACY_shape.png",
 "RMSmartShapeAnchor2D": "res://addons/rmsmartshape/assets/LEGACY_shape_anchor.png",
+"RNGTools": "",
 "RepositoryItem": "",
 "SS2D_Common_Functions": "",
 "SS2D_Edge": "",

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/diceThrow3.ogg-8ac5972420dced18d35d2b260c21c914.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/cassino_sfx/source/diceThrow3.ogg"
+dest_files=[ "res://.import/diceThrow3.ogg-8ac5972420dced18d35d2b260c21c914.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

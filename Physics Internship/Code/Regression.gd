@@ -31,13 +31,29 @@ func _arrayAvg(a:Array):
 func predict(p):
 	return _y_intercept(x_data,y_data) + (_slope(x_data,y_data)*p)
 	
-func batchPredict(x:Array):
-	var predicted = []
-	for i in x:
+func optionPredict(index : int):
+	var s = round(x_data[len(x_data)-1])
+	var xp : Array
+	for i in range(index+1):
+		xp.append(s+i)
+	print("xp",xp)
+	var predicted : Array
+	
+	for i in xp:
 		predicted.append(predict(i))
+	
 	return predicted
-
-
-func fit(x:Array,y:Array):
-	x_data = x
-	y_data = y
+	
+func fit(x:Array,y:Array, addNoise = true):
+	if addNoise:
+		x_data = addNoise(x)
+		y_data = addNoise(y)
+	else:	
+		x_data = x
+		y_data = y
+	
+func addNoise(n:Array):
+	var noised = []
+	for i in n:
+		noised.append(i + (RNGTools.randi_range(1,100) * 0.02))
+	return noised

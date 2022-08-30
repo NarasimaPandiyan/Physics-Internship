@@ -32,18 +32,19 @@ func _ready():
 	
 	tablePlugin = $Exp1_UI/Graph_Window/Data_Panel/Table
 	var colDefs = {
-		"h":{
-			"columnId": "h",
-			"columnName": "h",
-			"columnType": TableConstants.ColumnType.LABEL,
-						"columnAlign": TableConstants.Align.CENTER
-		},
 		"v":{
 			"columnId": "v",
 			"columnName": "v",
 			"columnType": TableConstants.ColumnType.LABEL,
 						"columnAlign": TableConstants.Align.CENTER
 		},
+		"h":{
+			"columnId": "ke",
+			"columnName": "KE",
+			"columnType": TableConstants.ColumnType.LABEL,
+						"columnAlign": TableConstants.Align.CENTER
+		},
+		
 	}	
 	
 	var tblConfig = TableManager.createTableConfig(colDefs)
@@ -144,7 +145,7 @@ func _on_CP1_body_entered(body):
 	v_data.append(v)
 	ke_data.append(calcKE(m,v))
 	Global.data.append({
-		"h" : str(round(h)),
+		"ke" : str(round(calcKE(m,v))),
 		"v" : str(round(v))
 	})
 	
@@ -210,6 +211,4 @@ func drawScatterKE(chart,mass):
 		 KE = calcKE(mass,Global.v_data[9])
 	}})
 	print(str(Global.ke_data)+"\n\n"+str(Global.v_data)+"\n\n")
-	lr.fit(Global.v_data,Global.ke_data)
-	var prediction = lr.batchPredict([10,11,12,13])
-	print(prediction,calcKE(mass,10))
+

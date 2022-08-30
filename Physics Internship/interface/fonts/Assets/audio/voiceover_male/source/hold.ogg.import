@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hold.ogg-2e855c7e92376cf237c618c013263c7d.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/voiceover_male/source/hold.ogg"
+dest_files=[ "res://.import/hold.ogg-2e855c7e92376cf237c618c013263c7d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

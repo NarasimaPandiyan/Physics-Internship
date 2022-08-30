@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tone1.ogg-1b537027f13117277a5cbc62d1d41832.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/digital_sfx/source/tone1.ogg"
+dest_files=[ "res://.import/tone1.ogg-1b537027f13117277a5cbc62d1d41832.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

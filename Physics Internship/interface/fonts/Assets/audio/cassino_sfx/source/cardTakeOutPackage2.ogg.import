@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cardTakeOutPackage2.ogg-c07b1a42ceb989c60e381e8c6228388a.oggstr"
+
+[deps]
+
+source_file="res://interface/fonts/Assets/audio/cassino_sfx/source/cardTakeOutPackage2.ogg"
+dest_files=[ "res://.import/cardTakeOutPackage2.ogg-c07b1a42ceb989c60e381e8c6228388a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
