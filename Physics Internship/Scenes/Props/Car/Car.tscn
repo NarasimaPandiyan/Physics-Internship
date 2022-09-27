@@ -4,7 +4,7 @@
 [ext_resource path="res://Images/Car/RedCar.png" type="Texture" id=2]
 
 [node name="Car" type="RigidBody2D" groups=["Car"]]
-gravity_scale = 30.0
+gravity_scale = 9.8
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2( -38, 23 )

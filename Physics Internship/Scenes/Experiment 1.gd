@@ -128,8 +128,12 @@ func _on_graph_button_pressed():
 
 
 func _on_Area2D_body_entered(body):
-	Global.v_data = v_data
-	Global.ke_data = ke_data
+	if (len(Global.v_data) == 0): 
+		Global.v_data = v_data
+		Global.ke_data = ke_data
+	else:	
+		Global.ke_data = []
+		Global.ke_data = []
 	get_tree().reload_current_scene()
 	
 

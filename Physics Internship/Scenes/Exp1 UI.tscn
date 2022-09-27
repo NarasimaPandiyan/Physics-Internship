@@ -78,6 +78,7 @@ size = Vector2( 12, 12 )
 [sub_resource type="DynamicFontData" id=24]
 
 [sub_resource type="DynamicFont" id=25]
+outline_size = 1
 font_data = ExtResource( 7 )
 fallback/0 = SubResource( 24 )
 
@@ -267,7 +268,6 @@ text = "Start"
 icon = SubResource( 8 )
 
 [node name="Graph_Window" type="WindowDialog" parent="."]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
