@@ -33,11 +33,11 @@ func predict(p):
 	
 func optionPredict(index : int):
 	var s = round(x_data[len(x_data)-1])
-	var xp : Array
+	var xp : Array =[]
 	for i in range(index+1):
 		xp.append(s+i)
 	print("xp",xp)
-	var predicted : Array
+	var predicted : Array =[]
 	
 	for i in xp:
 		predicted.append(predict(i))
@@ -55,5 +55,5 @@ func fit(x:Array,y:Array, addNoise = true):
 func addNoise(n:Array):
 	var noised = []
 	for i in n:
-		noised.append(i + (RNGTools.randi_range(1,100) * 0.02))
+		noised.append(i + (RNGTools.randi_range(-1,1)))
 	return noised

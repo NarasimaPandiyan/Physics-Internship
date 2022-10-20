@@ -1,5 +1,6 @@
 extends Node2D
 
+#car 
 const M = 50 #n number of pixels to represent a meter. here 50 pixels represent a meter
 var wheels = []
 var pos
@@ -50,10 +51,9 @@ func _ready():
 	var tblConfig = TableManager.createTableConfig(colDefs)
 	table = TableManager.createTable(tablePlugin, tblConfig)
 	TableManager.setTableData(table, Global.data)
+	# TODO print(tablePlugin.to_string())
 	
-	print(tablePlugin.to_string())
-	
-func _physics_process(delta):
+func _physics_process(_delta):
 	#Calculating parameters
 	pos = $Car.position
 	v = wheels[0].angular_velocity * 16

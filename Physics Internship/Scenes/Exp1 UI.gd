@@ -1,5 +1,7 @@
 extends Control
 
+
+#	
 onready var KE_graph = get_node("Graph_Window/Graph_Panel/KE vs v")
 onready var KE_graph_m = get_node("Graph_Window/Graph_Panel/KE vs v_m")
 onready var PE_graph = get_node("Graph_Window/Graph_Panel/PE vs h")
@@ -10,6 +12,8 @@ var op = ["MERCURY","VENUS","EARTH","MOON" ,"MARS", "JUPITER ","SATURN","URANUS"
 var val = [3.7,8.9,9.8,1.6,3.7,23.1,9.0,8.7,11.0,0.7]
 var pred = ["next 1 value","next 2 values","next 5 values","next 10 values"]
 var g = 9.8
+
+
 export var speed = 6000
 export var max_speed = 50
 var wheels = []
@@ -19,17 +23,17 @@ func _ready():
 	$UI/p_toggle.pressed = Global.p_toggle_state
 	
 	KE_graph.initialize(KE_graph.LABELS_TO_SHOW.Y_LABEL,
-  {
+	{
 	KE = Color8(0, 137, 161),
-  })
+	})
 	PE_graph.initialize(PE_graph.LABELS_TO_SHOW.NO_LABEL,
-  {
+	{
 	PE = Color8(220, 26, 52)
-  })
+	})
 	KE_graph_m.initialize(state,
-  {
+	{
 	KE = Color8(220, 26, 52),
-  })
+	})
 	
 	for i in op:
 		$Graph_Window/Slider_Panel/GravityOption.add_item(i)
@@ -49,7 +53,7 @@ func _on_b_toggle_toggled(button_pressed):
 
 
 func _on_Reset_button_pressed():
-	get_tree().reload_current_scene()
+	return get_tree().reload_current_scene()
 	
 
 
@@ -57,7 +61,7 @@ func _on_Start_button_pressed():
 	for wheel in wheels:
 		if wheel.angular_velocity < max_speed:
 			wheel.apply_torque_impulse(speed * get_physics_process_delta_time() * 60)
-
+	
 func _on_p_toggle_toggled(button_pressed):
 	$COE_info/PieChart.visible = button_pressed
 	Global.p_toggle_state = button_pressed
