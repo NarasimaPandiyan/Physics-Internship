@@ -24,7 +24,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=136]
 script = ExtResource( 1 )
-position = Vector2( 6.92531, 83.2444 )
+position = Vector2( 3.898, 64.882 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 135 )
@@ -63,7 +63,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=142]
 script = ExtResource( 1 )
-position = Vector2( 6.92531, 83.2444 )
+position = Vector2( 3.898, 64.882 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 141 )
@@ -102,9 +102,9 @@ width = 1.0
 
 [sub_resource type="Resource" id=148]
 script = ExtResource( 1 )
-position = Vector2( 191.402, 83.7656 )
+position = Vector2( 195.143, 90.2242 )
 point_in = Vector2( -75.9819, 2.35971 )
-point_out = Vector2( 75.9819, -2.35971 )
+point_out = Vector2( 81.8142, -6.44233 )
 properties = SubResource( 147 )
 
 [sub_resource type="Resource" id=149]
@@ -185,6 +185,8 @@ size = Vector2( 12, 12 )
 
 [node name="Experiment 1" type="Node2D"]
 script = ExtResource( 12 )
+h = null
+v = null
 
 [node name="Sky" type="TextureRect" parent="."]
 anchor_top = 1.0
@@ -215,10 +217,11 @@ collision_polygon_node_path = NodePath("../Collision")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Ground"]
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( 6.92026, 83.1844, 191.403, 83.7522, 195.742, 84.0977, 201.588, 85.4198, 217.62, 90.7268, 265.669, 111.246, 1400.22, 709.588, 1445.84, 730.097, 1460.52, 735.387, 1465.65, 736.666, 1487.98, 737.712, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4864, 755.346, -55.4679, 419.433, -39.6559, 189.762, -31.431, 146.743, -26.5378, 128.723, -21.0938, 113.35, -15.0505, 100.871, -6.98737, 90.658 )
+polygon = PoolVector2Array( 3.90151, 64.6042, 71.0284, 78.4313, 133.208, 87.2427, 195.143, 90.224, 199.744, 90.3615, 205.831, 91.4964, 222.281, 96.4362, 270.921, 116.259, 420.299, 188.912, 1400.62, 709.698, 1445.95, 730.125, 1460.54, 735.394, 1465.66, 736.668, 1487.98, 737.711, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4634, 755.336, -56.9808, 410.252, -42.2088, 174.27, -34.1785, 130.075, -29.3661, 111.566, -23.9905, 95.777, -18.0027, 82.9633, -9.9984, 72.4849 )
 
 [node name="Car" parent="." instance=ExtResource( 11 )]
-position = Vector2( 29, 93 )
+position = Vector2( 29, 96 )
+rotation = 0.078336
 gravity_scale = 15.0
 
 [node name="Area2D" type="Area2D" parent="."]

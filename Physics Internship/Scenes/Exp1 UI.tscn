@@ -394,18 +394,42 @@ margin_left = 63.0
 margin_top = 256.0
 margin_right = 206.0
 margin_bottom = 279.0
+value = 23.0
 
 [node name="ProgressBar2" type="ProgressBar" parent="Graph_Window/Slider_Panel"]
 margin_left = 62.0
 margin_top = 285.0
 margin_right = 206.0
 margin_bottom = 308.0
+value = 14.0
 
 [node name="ProgressBar3" type="ProgressBar" parent="Graph_Window/Slider_Panel"]
 margin_left = 62.0
 margin_top = 314.0
 margin_right = 205.0
 margin_bottom = 337.0
+value = 50.0
+
+[node name="Label3" type="Label" parent="Graph_Window/Slider_Panel"]
+margin_left = 4.0
+margin_top = 254.0
+margin_right = 53.0
+margin_bottom = 280.0
+text = "MAE:"
+
+[node name="Label4" type="Label" parent="Graph_Window/Slider_Panel"]
+margin_left = 5.0
+margin_top = 282.0
+margin_right = 54.0
+margin_bottom = 308.0
+text = "MSE:"
+
+[node name="Label5" type="Label" parent="Graph_Window/Slider_Panel"]
+margin_left = 5.0
+margin_top = 310.0
+margin_right = 54.0
+margin_bottom = 336.0
+text = "MPE:"
 
 [node name="Data_Panel" type="Panel" parent="Graph_Window"]
 anchor_left = 1.0

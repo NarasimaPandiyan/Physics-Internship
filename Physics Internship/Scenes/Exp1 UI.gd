@@ -96,6 +96,8 @@ func _on_TextureButton2_pressed():
 
 
 func _on_Button_pressed():
+	Global.v_data = lr.addNoise(Global.v_data)
+	Global.ke_data = lr.addNoise(Global.ke_data)
 	lr.fit(Global.v_data,Global.ke_data)
 	print(lr.optionPredict($Graph_Window/Slider_Panel/OptionButton.selected))
 

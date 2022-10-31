@@ -20,7 +20,7 @@ func _y_intercept(x:Array,y:Array):
 	return (_arrayAvg(y)-(_slope(x,y)*_arrayAvg(x)))
 	
 func _arraySum(a:Array):
-	var sum = 0
+	var sum:float = 0.0
 	for i in a:
 		sum += i
 	return sum
@@ -44,11 +44,7 @@ func optionPredict(index : int):
 	
 	return predicted
 	
-func fit(x:Array,y:Array, addNoise = true):
-	if addNoise:
-		x_data = addNoise(x)
-		y_data = addNoise(y)
-	else:	
+func fit(x:Array,y:Array):	
 		x_data = x
 		y_data = y
 	
@@ -57,3 +53,18 @@ func addNoise(n:Array):
 	for i in n:
 		noised.append(i + (RNGTools.randi_range(-1,1)))
 	return noised
+
+# MAE
+func mae(y_hat,y,n):
+	for i in range(len(y)):
+		y_hat[i] = abs(y[i]-y_hat[i])
+	return _arraySum(y_hat)/n
+	
+
+# MSE
+func mse(y_hat,y,n):
+	for i in range(len(y)):
+		y_hat[i] = pow((y[i]-y_hat[i]),2)
+	return _arraySum(y_hat)/n
+
+# MAPE
