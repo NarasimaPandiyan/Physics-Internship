@@ -63,6 +63,7 @@ func _on_Start_button_pressed():
 			wheel.apply_torque_impulse(speed * get_physics_process_delta_time() * 60)
 	
 func _on_p_toggle_toggled(button_pressed):
+	
 	$COE_info/PieChart.visible = button_pressed
 	Global.p_toggle_state = button_pressed
 

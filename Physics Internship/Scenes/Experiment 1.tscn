@@ -24,7 +24,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=136]
 script = ExtResource( 1 )
-position = Vector2( 3.898, 64.882 )
+position = Vector2( 2.93696, 86.966 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 135 )
@@ -63,7 +63,7 @@ width = 1.0
 
 [sub_resource type="Resource" id=142]
 script = ExtResource( 1 )
-position = Vector2( 3.898, 64.882 )
+position = Vector2( 2.93696, 86.966 )
 point_in = Vector2( -88.8092, 4.80051 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 141 )
@@ -102,9 +102,9 @@ width = 1.0
 
 [sub_resource type="Resource" id=148]
 script = ExtResource( 1 )
-position = Vector2( 195.143, 90.2242 )
+position = Vector2( 184.75, 86.6728 )
 point_in = Vector2( -75.9819, 2.35971 )
-point_out = Vector2( 81.8142, -6.44233 )
+point_out = Vector2( 87.3651, 9.6554 )
 properties = SubResource( 147 )
 
 [sub_resource type="Resource" id=149]
@@ -185,10 +185,9 @@ size = Vector2( 12, 12 )
 
 [node name="Experiment 1" type="Node2D"]
 script = ExtResource( 12 )
-h = null
-v = null
 
 [node name="Sky" type="TextureRect" parent="."]
+pause_mode = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -199,6 +198,7 @@ size_flags_stretch_ratio = 0.0
 texture = ExtResource( 15 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
+pause_mode = 2
 position = Vector2( -128, 49 )
 
 [node name="Texture" type="Node2D" parent="Ground"]
@@ -217,14 +217,14 @@ collision_polygon_node_path = NodePath("../Collision")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Ground"]
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( 3.90151, 64.6042, 71.0284, 78.4313, 133.208, 87.2427, 195.143, 90.224, 199.744, 90.3615, 205.831, 91.4964, 222.281, 96.4362, 270.921, 116.259, 420.299, 188.912, 1400.62, 709.698, 1445.95, 730.125, 1460.54, 735.394, 1465.66, 736.668, 1487.98, 737.711, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4634, 755.336, -56.9808, 410.252, -42.2088, 174.27, -34.1785, 130.075, -29.3661, 111.566, -23.9905, 95.777, -18.0027, 82.9633, -9.9984, 72.4849 )
+polygon = PoolVector2Array( 2.93209, 86.9094, 184.756, 86.6031, 189.61, 87.5679, 195.954, 89.3849, 212.917, 95.5868, 262.569, 117.483, 1400.41, 710.206, 1445.89, 730.262, 1460.53, 735.43, 1465.65, 736.678, 1487.98, 737.707, 1428.78, 744.85, 1343.32, 754.453, 644.644, 747.023, -54.4522, 755.331, -57.4622, 421.294, -43.0215, 192.903, -35.0515, 150.121, -30.2646, 132.201, -24.9112, 116.911, -18.9407, 104.501, -10.9351, 94.3363 )
 
 [node name="Car" parent="." instance=ExtResource( 11 )]
-position = Vector2( 29, 96 )
-rotation = 0.078336
+position = Vector2( 25, 96 )
 gravity_scale = 15.0
 
 [node name="Area2D" type="Area2D" parent="."]
+pause_mode = 2
 position = Vector2( 1406, 737 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -232,6 +232,7 @@ position = Vector2( -59, -147 )
 shape = SubResource( 55 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
+pause_mode = 2
 position = Vector2( 17, 29 )
 
 [node name="CP1" type="Area2D" parent="CheckPoints"]
@@ -301,6 +302,7 @@ __meta__ = {
 }
 
 [node name="graph_button" type="Button" parent="."]
+pause_mode = 2
 margin_left = 1126.0
 margin_top = 194.0
 margin_right = 1219.0
