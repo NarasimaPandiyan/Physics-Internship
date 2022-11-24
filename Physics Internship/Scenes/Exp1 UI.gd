@@ -58,6 +58,7 @@ func _on_Reset_button_pressed():
 
 
 func _on_Start_button_pressed():
+	Global.data = []
 	for wheel in wheels:
 		if wheel.angular_velocity < max_speed:
 			wheel.apply_torque_impulse(speed * get_physics_process_delta_time() * 60)
