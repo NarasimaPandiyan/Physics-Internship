@@ -208,8 +208,8 @@ _global_script_class_icons={
 
 config/name="Physics Internship"
 run/main_scene="res://Scenes/Experiment 1.tscn"
-boot_splash/image="res://Images/SRETLOGO.png"
-boot_splash/fullsize=false
+boot_splash/image="res://Images/SRET_Splash.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Images/Other/test-tube-line-144.png"
 
 [autoload]
