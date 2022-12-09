@@ -168,6 +168,36 @@ _global_script_classes=[ {
 "class": "SS2D_VertexProperties",
 "language": "GDScript",
 "path": "res://addons/rmsmartshape/vertex_properties.gd"
+}, {
+"base": "Control",
+"class": "SuperChart",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChart/SuperChart.gd"
+}, {
+"base": "Node2D",
+"class": "SuperChartDataLine",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChartDataLine/SuperChartDataLine.gd"
+}, {
+"base": "Node2D",
+"class": "SuperChartDataPoint",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChartDataPoint/SuperChartDataPoint.gd"
+}, {
+"base": "Node2D",
+"class": "SuperChartGrid",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChartGrid/SuperChartGrid.gd"
+}, {
+"base": "Node2D",
+"class": "SuperChartXLabel",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChartXLabel/SuperChartXLabel.gd"
+}, {
+"base": "Node2D",
+"class": "SuperChartYLabel",
+"language": "GDScript",
+"path": "res://addons/DrunkBull.SuperChart/src/main/SuperChartYLabel/SuperChartYLabel.gd"
 } ]
 _global_script_class_icons={
 "ContributorClass": "",
@@ -201,7 +231,13 @@ _global_script_class_icons={
 "SS2D_Shape_Open": "res://addons/rmsmartshape/assets/open_shape.png",
 "SS2D_Shape_Render": "",
 "SS2D_Strings": "",
-"SS2D_VertexProperties": ""
+"SS2D_VertexProperties": "",
+"SuperChart": "",
+"SuperChartDataLine": "",
+"SuperChartDataPoint": "",
+"SuperChartGrid": "",
+"SuperChartXLabel": "",
+"SuperChartYLabel": ""
 }
 
 [application]

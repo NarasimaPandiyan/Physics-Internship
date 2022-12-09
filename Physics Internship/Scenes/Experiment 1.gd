@@ -4,7 +4,6 @@ extends Node2D
 const M = 50 #n number of pixels to represent a meter. here 50 pixels represent a meter
 var wheels = []
 var pos
-
 export var h : float
 export var v : float
 var m : float
@@ -22,9 +21,9 @@ var pe_data = []
 var table: TableManager.Table
 var tablePlugin: TableManager.Plugin
 
-onready var kev = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v"
-onready var kevm = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v_m"
-onready var peh = $"Exp1_UI/Graph_Window/Graph_Panel/PE vs h"
+# onready var kev = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v"
+# onready var kevm = $"Exp1_UI/Graph_Window/Graph_Panel/KE vs v_m"
+# onready var peh = $"Exp1_UI/Graph_Window/Graph_Panel/PE vs h"
 
 func _ready():
 	if Global.GWindow_state:
@@ -122,8 +121,8 @@ func _on_graph_button_pressed():
 	$Exp1_UI/Graph_Window.popup()
 	Global.GWindow_state = true
 	Global.mass = $Car.mass
-	drawScatterKE(kev,Global.mass)
-	drawScatterKE(kevm,Global.mass)
+	# drawScatterKE(kev,Global.mass)
+	# drawScatterKE(kevm,Global.mass)
 	$graph_button.hide()
 
 

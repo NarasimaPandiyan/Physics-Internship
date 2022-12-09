@@ -2,9 +2,7 @@ extends Control
 
 
 #	
-onready var KE_graph = get_node("Graph_Window/Graph_Panel/KE vs v")
-onready var KE_graph_m = get_node("Graph_Window/Graph_Panel/KE vs v_m")
-onready var PE_graph = get_node("Graph_Window/Graph_Panel/PE vs h")
+
 
 onready var parent = get_node("/root/Experiment 1")
 
@@ -22,18 +20,6 @@ func _ready():
 	wheels = get_tree().get_nodes_in_group("Wheel")
 	$UI/p_toggle.pressed = Global.p_toggle_state
 	
-	KE_graph.initialize(KE_graph.LABELS_TO_SHOW.Y_LABEL,
-	{
-	KE = Color8(0, 137, 161),
-	})
-	PE_graph.initialize(PE_graph.LABELS_TO_SHOW.NO_LABEL,
-	{
-	PE = Color8(220, 26, 52)
-	})
-	KE_graph_m.initialize(state,
-	{
-	KE = Color8(220, 26, 52),
-	})
 	
 	for i in op:
 		$Graph_Window/Slider_Panel/GravityOption.add_item(i)
@@ -76,14 +62,14 @@ func _on_Graph_Window_popup_hide():
 
 
 func _on_Mass_Slider_value_changed(value):
-	get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,((value/10)/9.8)*g)
+	#get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,((value/10)/9.8)*g)
 	get_node("%Mass_Label").text= str(value) 
 
 
 func _on_GravityOption_item_selected(index):
 	
 	if(index != 11):
-		get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,(($Graph_Window/Slider_Panel/Mass_Slider.value/10)/9.8)*val[index])
+		#get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,(($Graph_Window/Slider_Panel/Mass_Slider.value/10)/9.8)*val[index])
 		$Graph_Window/Slider_Panel/Gravity_Slider.value = val[index]
 		g=val[index]
 		$Graph_Window/Slider_Panel/Gravity_Slider.editable = false
@@ -106,6 +92,6 @@ func _on_Button_pressed():
 
 func _on_Gravity_Slider_value_changed(value):
 	get_node("%Gravity_Label").text = str(value)
-	get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,(($Graph_Window/Slider_Panel/Mass_Slider.value/10)/9.8)*value)
+	#get_node("/root/Experiment 1").drawScatterKE(KE_graph_m,(($Graph_Window/Slider_Panel/Mass_Slider.value/10)/9.8)*value)
 	$Graph_Window/Slider_Panel/Gravity_Slider.value = value
 	g=value

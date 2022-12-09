@@ -1,11 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Images/Other/Pie_Bg_128.png" type="Texture" id=1]
 [ext_resource path="res://Images/Other/Pie_Fill_128.png" type="Texture" id=2]
-[ext_resource path="res://Assets/font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://addons/AnomalyAcesTable/Scripts/Helper/TablePlugin.gd" type="Script" id=5]
-[ext_resource path="res://addons/GDCharts/script.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Kenney Future Narrow.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/Exp1 UI.gd" type="Script" id=8]
 [ext_resource path="res://Themes/new_theme.tres" type="Theme" id=9]
 [ext_resource path="res://DarkTheme/Dark.theme" type="Theme" id=10]
@@ -74,13 +71,6 @@ data = {
 [sub_resource type="ImageTexture" id=14]
 image = SubResource( 32 )
 size = Vector2( 12, 12 )
-
-[sub_resource type="DynamicFontData" id=24]
-
-[sub_resource type="DynamicFont" id=25]
-outline_size = 1
-font_data = ExtResource( 7 )
-fallback/0 = SubResource( 24 )
 
 [node name="Exp1_UI" type="Control"]
 anchor_right = 1.0
@@ -264,7 +254,6 @@ text = "Start"
 icon = SubResource( 8 )
 
 [node name="Graph_Window" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -471,50 +460,6 @@ margin_left = 24.0
 margin_top = 14.0
 margin_right = 547.0
 margin_bottom = 602.0
-
-[node name="KE vs v" type="ReferenceRect" parent="Graph_Window/Graph_Panel"]
-visible = false
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 493.0
-margin_bottom = 572.0
-script = ExtResource( 6 )
-label_font = ExtResource( 4 )
-MAX_VALUES = 10
-chart_background_opacity = 0.0
-
-[node name="Label" type="Label" parent="Graph_Window/Graph_Panel/KE vs v"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -25.0
-margin_right = 25.0
-margin_bottom = 14.0
-text = "Original"
-
-[node name="KE vs v_m" type="ReferenceRect" parent="Graph_Window/Graph_Panel"]
-margin_left = 25.0
-margin_top = 18.0
-margin_right = 502.0
-margin_bottom = 574.0
-script = ExtResource( 6 )
-label_font = SubResource( 25 )
-chart_background_opacity = 0.0
-
-[node name="Label2" type="Label" parent="Graph_Window/Graph_Panel/KE vs v_m"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -28.0
-margin_right = 28.0
-margin_bottom = 14.0
-text = "Modified"
-
-[node name="PE vs h" type="ReferenceRect" parent="Graph_Window/Graph_Panel"]
-visible = false
-margin_left = 510.0
-margin_top = 15.0
-margin_right = 980.0
-margin_bottom = 555.0
-script = ExtResource( 6 )
 
 [connection signal="toggled" from="UI/b_toggle" to="." method="_on_b_toggle_toggled"]
 [connection signal="toggled" from="UI/p_toggle" to="." method="_on_p_toggle_toggled"]
